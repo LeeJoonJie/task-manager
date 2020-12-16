@@ -23,16 +23,16 @@
 
   <div class="field">
     <%= form.label :priority %>
-    <%= form.number_field :priority %>
+    <%= form.select :priority, Task.priorities.keys.to_a.map(&:titleize), selected: "Moderate" %>
   </div>
 
   <div class="field">
     <%= form.label :deadline %>
-    <%= form.date_select :deadline %>
+    <%= form.date_select :deadline, order: [:day, :month, :year], start_year: @current_year, end_year: 2050 %>
   </div>
 
   <div class="field">
-    <%= form.label :is_completed %>
+    <%= form.label "Completed" %>
     <%= form.check_box :is_completed %>
   </div>
 

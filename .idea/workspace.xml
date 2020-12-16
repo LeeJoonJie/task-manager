@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Initial commit&#10;&#10;Create task-manager project">
-      <change beforePath="$PROJECT_DIR$/.idea/task-manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/task-manager.iml" afterDir="false" />
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Add validation for task fields&#10;&#10;To ensure that title, deadline, priority and is_completed is non-empty and valid.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608126220103</updated>
-      <workItem from="1608126221526" duration="972000" />
+      <workItem from="1608126221526" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -147,7 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608126282495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Generate rails scaffold&#10;&#10;Use rails scaffold to create basic outline of the task manager. Features now include adding, editing, deleting and viewing tasks.">
+      <created>1608127281719</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608127281720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add validation for task fields&#10;&#10;To ensure that title, deadline, priority and is_completed is non-empty and valid.">
+      <created>1608127455012</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608127455012</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +182,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit&#10;&#10;Create task-manager project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;&#10;Create task-manager project" />
+    <MESSAGE value="Generate rails scaffold&#10;&#10;Use rails scaffold to create basic outline of the task manager. Features now include adding, editing, deleting and viewing tasks." />
+    <MESSAGE value="Add validation for task fields&#10;&#10;To ensure that title, deadline, priority and is_completed is non-empty and valid." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add validation for task fields&#10;&#10;To ensure that title, deadline, priority and is_completed is non-empty and valid." />
   </component>
 </project>
