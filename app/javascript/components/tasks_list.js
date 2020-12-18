@@ -1,26 +1,54 @@
 import React from 'react'
-import axios from 'axios'
 
-class Tasks_list extends React.Component {
-    state = {
-        tasks: []
-    };
-
-    componentDidMount() {
-        axios
-            .get('/tasks')
-            .then(response => {
-                this.setState({ posts: response.data.tasks });
-            })
-    }
+class TasksList extends React.Component {
 
     renderAllTasks = () => {
         return(
-            <ul>
-                {this.state.posts.map(task => (
-                    <li key={task}>{task}</li>
-                ))}
-            </ul>
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Deadline</th>
+                    <th>Is completed</th>
+                    <th colSpan="3"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>
+                        {this.props.tasks.map((task, index) => (
+                            <li key={index}>{task["title"]}</li>
+                        ))}
+                        </td>
+                    <td>
+                        {this.props.tasks.map((task, index) => (
+                            <li key={index}>{task["description"]}</li>
+                        ))}
+                    </td>
+
+                    <td>
+                        {this.props.tasks.map((task, index) => (
+                            <li key={index}>{task["priority"]}</li>
+                        ))}
+                    </td>
+
+                    <td>
+                        {this.props.tasks.map((task, index) => (
+                            <li key={index}>{task["deadline"]}</li>
+                        ))}
+                    </td>
+
+                    <td>
+                        {this.props.tasks.map((task, index) => (
+                            <li key={index}>{task["is_completed"] ? "Yes" : "No"}</li>
+                        ))}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         )
     }
 
@@ -31,6 +59,8 @@ class Tasks_list extends React.Component {
             </div>
         )
     }
+
 }
 
-export default Tasks_list
+
+export default TasksList
