@@ -17,7 +17,6 @@ class NewTask extends React.Component {
     }
 
     handleChange = event => {
-        console.log( event.target.value == "true")
         if (event.target.name == "is_completed") {
             this.setState({ [event.target.name]: event.target.value == "on"});
         } else {

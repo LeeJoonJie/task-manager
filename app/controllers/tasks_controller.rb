@@ -8,9 +8,11 @@ class TasksController < ApplicationController
     render json: { tasks: tasks }
   end
 
-  # GET /tasks/1
-  # GET /tasks/1.json
-  def show; end
+  # GET /tasks/:id
+  def show
+    task = Task.find(params[:id])
+    render json: task
+  end
 
   # GET /tasks/new
   def new
@@ -25,7 +27,7 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
 
-    if tasj.save
+    if task.save
       render json: { task: task }
     else
       render json: task.errors, status: :unprocessable_entity
@@ -62,7 +64,7 @@ class TasksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_task
     @task = Task.find(params[:id])
-  end
+    end
 
   # Only allow a list of trusted parameters through.
   def task_params
