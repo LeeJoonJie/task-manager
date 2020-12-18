@@ -25,6 +25,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
+                <h1>Task Manager </h1>
                 <Link to="/new">Add new task</Link>
                 <TasksList tasks={this.state.tasks}/>
             </div>

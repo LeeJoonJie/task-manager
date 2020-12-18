@@ -1,56 +1,36 @@
 import React from 'react'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 class TasksList extends React.Component {
 
     renderAllTasks = () => {
         return(
-            <table>
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Priority</th>
-                    <th>Deadline</th>
-                    <th>Is completed</th>
-                    <th colSpan="3"></th>
-                </tr>
-                </thead>
 
-                <tbody>
-                <tr>
-                    <td>
-                        {this.props.tasks.map((task, index) => (
-                            <li key={index}>{task["title"]}</li>
-                        ))}
-                        </td>
-                    <td>
-                        {this.props.tasks.map((task, index) => (
-                            <li key={index}>{task["description"]}</li>
-                        ))}
-                    </td>
-
-                    <td>
-                        {this.props.tasks.map((task, index) => (
-                            <li key={index}>{task["priority"]}</li>
-                        ))}
-                    </td>
-
-                    <td>
-                        {this.props.tasks.map((task, index) => (
-                            <li key={index}>{task["deadline"]}</li>
-                        ))}
-                    </td>
-
-                    <td>
-                        {this.props.tasks.map((task, index) => (
-                            <li key={index}>{task["is_completed"] ? "Yes" : "No"}</li>
-                        ))}
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        )
-    }
+        <Col md={8}>
+            {this.props.tasks.map((task, index) => (
+                <Card key={task.id}>
+                    <Card.Body>
+                        <Card.Title>
+                            {task["title"]}
+                        </Card.Title>
+                        <Card.Text>
+                            {task["description"]}
+                        </Card.Text>
+                        <Card.Text>
+                            {task["deadline"]}
+                        </Card.Text>
+                        <Card.Text>
+                            {task["priority"]}
+                        </Card.Text>
+                        <Card.Text>
+                            {task["is_completed"]}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                ))}
+        </Col>
+    )}
 
     render() {
         return (

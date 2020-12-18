@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/new_task.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/util/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Add react form for adding tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/components/home_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/home_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -223,7 +218,7 @@
       <workItem from="1608126221526" duration="1729000" />
       <workItem from="1608130956723" duration="12000" />
       <workItem from="1608205228926" duration="4128000" />
-      <workItem from="1608250651119" duration="2880000" />
+      <workItem from="1608250651119" duration="4725000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -274,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608209445352</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add react form for adding tasks">
+      <created>1608254310188</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608254310188</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +303,8 @@
     <MESSAGE value="Add basic react route&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. App.js which is the base component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Set-up basic files for react&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. components/app.js which is the base react component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Add react-router dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add react-router dependencies" />
+    <MESSAGE value="Add react form for adding tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add react form for adding tasks" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608251084396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
