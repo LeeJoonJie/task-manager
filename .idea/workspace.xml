@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Format task list into bootstrap cards">
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/Task.js" afterDir="false" />
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Create task form with react-hook-form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/Task.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/new_task.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/new_task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +46,6 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1lk1LYtC4PEWC37zDaXtFGkkV98" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,7 +66,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.JavaScript" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -75,6 +75,7 @@
       <command value="yarn add react-router-dom" />
       <command value="npm install react-hook-form" />
       <command value="rails server" />
+      <command value="npm install @hookform/error-message" />
     </option>
   </component>
   <component name="RunManager" selected="Rails.rails server">
@@ -224,7 +225,9 @@
       <workItem from="1608205228926" duration="4128000" />
       <workItem from="1608250651119" duration="4927000" />
       <workItem from="1608256763937" duration="93000" />
-      <workItem from="1608291781394" duration="5409000" />
+      <workItem from="1608291781394" duration="9100000" />
+      <workItem from="1608306307800" duration="74000" />
+      <workItem from="1608378883641" duration="9528000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -289,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608256387619</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add page to show individual task&#10;&#10;Create Task.js used to view individual tasks.">
+      <created>1608298681354</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1608298681354</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Create task form with react-hook-form">
+      <created>1608304347190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608304347190</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,9 +335,11 @@
     <MESSAGE value="Add react-router dependencies" />
     <MESSAGE value="Add react form for adding tasks" />
     <MESSAGE value="Format task list into bootstrap cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Format task list into bootstrap cards" />
+    <MESSAGE value="Add page to show individual task&#10;&#10;Create Task.js used to view individual tasks." />
+    <MESSAGE value="Create task form with react-hook-form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create task form with react-hook-form" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608293098686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
+    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608382842415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
   </component>
 </project>

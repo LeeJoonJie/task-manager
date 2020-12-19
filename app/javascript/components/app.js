@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './home_page'
-import NewTask from './new_task'
 import Task from './Task'
+import TaskForm from './task_form'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
@@ -10,8 +10,9 @@ class App extends React.Component {
             <div>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
-                    <Route exact path="/new" component={NewTask} />
+                    <Route exact path="/new" component={TaskForm} />
                     <Route exact path="/tasks/indiv/:id" component={Task} />
+                    <Route exact path="/tasks/indiv/:id/edit" component={TaskForm} />
                     )} />
                 </Switch>
             </div>
@@ -20,4 +21,3 @@ class App extends React.Component {
 }
 
 export default App
-

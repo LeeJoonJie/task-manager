@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import Card from 'react-bootstrap/Card'
-
 import {useParams} from 'react-router-dom'
 
 function Task(props) {
@@ -16,7 +15,7 @@ function Task(props) {
             setTask(response.data)
         })
     }, [id])
-    console.log(task.title)
+
     return (
 
         <div>
