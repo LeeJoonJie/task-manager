@@ -1,15 +1,49 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import axios from "axios"
 import {Link} from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 class TasksList extends React.Component {
 
-    renderAllTasks = () => {
-        return (
+    constructor(props) {
+        super(props)
+        this.state = {
+            tasks: []
+        }
+    }
 
+    getAllTasks() {
+        axios({
+            method: 'GET',
+            url: '/tasks'
+        })
+            .then(response => {
+                this.setState({tasks: response.data.tasks})
+            })
+    }
+
+    componentDidMount() {
+        this.getAllTasks()
+    }
+
+    // For deleting individual tasks
+    deleteTask(id) {
+        if (window.confirm("Do you want to delete this task?")) {
+            axios({
+                method: 'DELETE',
+                url: `/tasks/${id}`
+            }).then( (response) => {
+                this.getAllTasks() //id Update tasks state to update list
+            })
+        }
+    }
+
+    renderAllTasks() {
+        return (
             <Col md={8}>
-                {this.props.tasks.map(task => (
+                {this.state.tasks.map(task => (
 
                     <Card key={task.id}>
                         <Card.Body>
@@ -31,10 +65,11 @@ class TasksList extends React.Component {
                                 {task["is_completed"]}
                             </Card.Text>
                             <Link to={`/tasks/indiv/${task.id}/edit`} key={task.id + 1}>
-                                <Card.Title>
+                                <Button>
                                     Edit Task
-                                </Card.Title>
+                                </Button>
                             </Link>
+                            <Button onClick={() => this.deleteTask(task.id)}>Delete Task</Button>
 
                         </Card.Body>
                     </Card>
@@ -53,6 +88,5 @@ class TasksList extends React.Component {
     }
 
 }
-
 
 export default TasksList

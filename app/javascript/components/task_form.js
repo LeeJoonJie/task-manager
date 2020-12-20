@@ -1,8 +1,8 @@
-import React, {useEffect} from "react";
-import axios from "axios";
-import {useForm} from "react-hook-form";
-import {useParams} from "react-router-dom";
-import {ErrorMessage} from '@hookform/error-message';
+import React, {useEffect} from "react"
+import axios from "axios"
+import {useForm} from "react-hook-form"
+import {useParams} from "react-router-dom"
+import {ErrorMessage} from '@hookform/error-message'
 
 function TaskForm(props) {
 
@@ -16,7 +16,6 @@ function TaskForm(props) {
             axios({
                 method: 'GET',
                 url: `/tasks/${id}`,
-                headers: {'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content}
             }).then(response => {
                 const task = response.data
                 setValue("title", task.title)
@@ -37,14 +36,12 @@ function TaskForm(props) {
     } = useForm()
 
     const onSubmit = data => {
-        console.log("SUBMIT")
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
         axios({
             method: method,
             url: url,
             data: data,
-            headers: {'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content}
         }).then(response => (console.log(response)))
     }
 
