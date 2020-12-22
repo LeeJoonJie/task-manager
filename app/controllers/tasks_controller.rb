@@ -8,6 +8,15 @@ class TasksController < ApplicationController
     render json: { tasks: tasks }
   end
 
+  # PUT /tasks
+  # For sorting tasks
+  def index_sort
+    sort_field = params[:sortField]
+    sort_order = params[:sortOrder].upcase # DESC or ASC
+    tasks = Task.order("#{sort_field} #{sort_order}")
+    render json: { tasks: tasks }
+  end
+
   # GET /tasks/:id
   def show
     task = Task.find(params[:id])

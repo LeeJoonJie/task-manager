@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :tasks
 
+  put '/tasks', to: 'tasks#index_sort'
+
   # IMPORTANT #
   # This `match` must be the *last* route in routes.rb
   match '*path', to: 'pages#index', via: :all

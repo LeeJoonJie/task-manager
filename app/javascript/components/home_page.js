@@ -1,7 +1,6 @@
 import React from 'react'
 import TasksList from "./tasks_list";
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 
 class HomePage extends React.Component {
 

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Create task form with react-hook-form" />
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Create task form with react-hook-form">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/home_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/home_page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,6 +227,8 @@
       <workItem from="1608306307800" duration="74000" />
       <workItem from="1608378883641" duration="9711000" />
       <workItem from="1608467033677" duration="4262000" />
+      <workItem from="1608472204252" duration="157000" />
+      <workItem from="1608642981510" duration="12563000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -332,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608472146305</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Implement delete task feature">
+      <created>1608472321054</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608472321055</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +388,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Implement delete task feature" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608468964367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
+    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608644398025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
   </component>
 </project>
