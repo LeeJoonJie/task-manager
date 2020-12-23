@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Create task form with react-hook-form">
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/home_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/home_page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -73,6 +72,7 @@
       <command value="yarn add react-router-dom" />
       <command value="npm install react-hook-form" />
       <command value="npm install @hookform/error-message" />
+      <command value=" yarn add @material-ui/core" />
       <command value="rails server" />
     </option>
   </component>
@@ -228,7 +228,8 @@
       <workItem from="1608378883641" duration="9711000" />
       <workItem from="1608467033677" duration="4262000" />
       <workItem from="1608472204252" duration="157000" />
-      <workItem from="1608642981510" duration="12563000" />
+      <workItem from="1608642981510" duration="12986000" />
+      <workItem from="1608722687667" duration="22632000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -349,7 +350,35 @@
       <option name="project" value="LOCAL" />
       <updated>1608472321055</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
+      <created>1608658434679</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608658434679</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add Material UI dependency">
+      <created>1608724770690</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608724770690</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add Material UI pickers dependency">
+      <created>1608734816696</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608734816696</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add date-io/date-fns dependency">
+      <created>1608735327813</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608735327813</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,9 +414,13 @@
     <MESSAGE value="Delete new_task.js form&#10;&#10;new_task.js has been replaced by task_form.js and is now redundant." />
     <MESSAGE value="Remove CSRF token authentication" />
     <MESSAGE value="Implement delete task feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement delete task feature" />
+    <MESSAGE value="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order" />
+    <MESSAGE value="Add Material UI dependency" />
+    <MESSAGE value="Add Material UI pickers dependency" />
+    <MESSAGE value="Add date-io/date-fns dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add date-io/date-fns dependency" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608644398025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
+    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608724650536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
   </component>
 </project>
