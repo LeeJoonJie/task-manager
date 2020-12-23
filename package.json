@@ -25,6 +25,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@material-ui/pickers": "^3.2.10",
     "webpack-dev-server": "^3.11.0"
   }
 }
