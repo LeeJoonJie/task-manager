@@ -22,19 +22,19 @@ function Task(props) {
             <Card>
                 <Card.Body>
                     <Card.Title>
-                        {task["title"]}
+                        {task.title}
                     </Card.Title>
                     <Card.Text>
-                        {task["description"]}
+                        {task.description}
                     </Card.Text>
                     <Card.Text>
-                        {task["deadline"]}
+                        {task.deadline}
                     </Card.Text>
                     <Card.Text>
-                        {task["priority"]}
+                        {task.priority}
                     </Card.Text>
                     <Card.Text>
-                        {task["is_completed"] ? "Yes" : "No"}
+                        {task.progress}
                     </Card.Text>
                 </Card.Body>
             </Card>

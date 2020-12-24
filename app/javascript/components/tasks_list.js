@@ -65,7 +65,8 @@ class TasksList extends React.Component {
                         <option value="created_at">Date of creation</option>
                         <option value="priority">Priority</option>
                         <option value="deadline">Deadline</option>
-                        <option value="is_completed">Completion</option>
+                        <option value="progress">Progress</option>
+
                     </select>
 
                     <label>Order:</label>
@@ -111,7 +112,7 @@ class TasksList extends React.Component {
                                 {task.priority}
                             </Card.Text>
                             <Card.Text>
-                                {task.is_completed ? "Done" : "Not Done"}
+                                {task.progress}
                             </Card.Text>
                             <Link to={`/tasks/indiv/${task.id}/edit`} key={task.id + 1}>
                                 <Button>
