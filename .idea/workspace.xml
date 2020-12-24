@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/deadline_date_picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/description_text_field.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/priority_select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/progress_slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/title_text_field.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +232,7 @@
       <workItem from="1608722687667" duration="23029000" />
       <workItem from="1608796406437" duration="1023000" />
       <workItem from="1608816728221" duration="66000" />
-      <workItem from="1608817374871" duration="4322000" />
+      <workItem from="1608817374871" duration="4666000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -409,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608821305568</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refactor task form components&#10;&#10;Moved the task form components (text fields, sliders etc.) into separate .js files for improved modularity. Created task_form directory in /javascript/components and shifted all task form related files into there.">
+      <created>1608822451136</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1608822451136</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +452,8 @@
     <MESSAGE value="Add Material UI elements to task form" />
     <MESSAGE value="Modify Tasks database&#10;&#10;Delete is_completed column and add progress column that is of type integer. The progress field is used to keep track of the (percentage) progress of tasks rather than just completed or not completed as in the old is_completed column." />
     <MESSAGE value="Update UI with new progress field&#10;&#10;Remove old is_completed fields in the UI and replace with the new progress field." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update UI with new progress field&#10;&#10;Remove old is_completed fields in the UI and replace with the new progress field." />
+    <MESSAGE value="Refactor task form components&#10;&#10;Moved the task form components (text fields, sliders etc.) into separate .js files for improved modularity. Created task_form directory in /javascript/components and shifted all task form related files into there." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor task form components&#10;&#10;Moved the task form components (text fields, sliders etc.) into separate .js files for improved modularity. Created task_form directory in /javascript/components and shifted all task form related files into there." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608818887104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />

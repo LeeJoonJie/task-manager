@@ -63,6 +63,7 @@ class TasksList extends React.Component {
                     <label>Sort by:</label>
                     <select name="field" onChange={this.handleFieldChange}>
                         <option value="created_at">Date of creation</option>
+                        <option value="updated_at">Latest Edit</option>
                         <option value="priority">Priority</option>
                         <option value="deadline">Deadline</option>
                         <option value="progress">Progress</option>
