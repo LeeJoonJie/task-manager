@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './home_page'
 import Task from './Task'
-import TaskForm from './task_form'
+import TaskForm from './task_form/task_form'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {

@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/deadline_date_picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/description_text_field.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/priority_select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/progress_slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/task_form/title_text_field.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="inlay.hints.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/javascript/components/task_form" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -229,7 +236,10 @@
       <workItem from="1608467033677" duration="4262000" />
       <workItem from="1608472204252" duration="157000" />
       <workItem from="1608642981510" duration="12986000" />
-      <workItem from="1608722687667" duration="22632000" />
+      <workItem from="1608722687667" duration="23029000" />
+      <workItem from="1608796406437" duration="1023000" />
+      <workItem from="1608816728221" duration="66000" />
+      <workItem from="1608817374871" duration="4322000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -378,7 +388,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608735327813</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add Material UI elements to task form">
+      <created>1608751199767</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1608751199767</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Modify Tasks database&#10;&#10;Delete is_completed column and add progress column that is of type integer. The progress field is used to keep track of the (percentage) progress of tasks rather than just completed or not completed as in the old is_completed column.">
+      <created>1608818251679</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1608818251679</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update UI with new progress field&#10;&#10;Remove old is_completed fields in the UI and replace with the new progress field.">
+      <created>1608821305568</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1608821305568</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,9 +449,12 @@
     <MESSAGE value="Add Material UI dependency" />
     <MESSAGE value="Add Material UI pickers dependency" />
     <MESSAGE value="Add date-io/date-fns dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add date-io/date-fns dependency" />
+    <MESSAGE value="Add Material UI elements to task form" />
+    <MESSAGE value="Modify Tasks database&#10;&#10;Delete is_completed column and add progress column that is of type integer. The progress field is used to keep track of the (percentage) progress of tasks rather than just completed or not completed as in the old is_completed column." />
+    <MESSAGE value="Update UI with new progress field&#10;&#10;Remove old is_completed fields in the UI and replace with the new progress field." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update UI with new progress field&#10;&#10;Remove old is_completed fields in the UI and replace with the new progress field." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608724650536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
+    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608818887104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
   </component>
 </project>
