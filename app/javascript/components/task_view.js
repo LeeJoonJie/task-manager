@@ -3,7 +3,7 @@ import axios from "axios";
 import Card from 'react-bootstrap/Card'
 import {useParams} from 'react-router-dom'
 
-function Task(props) {
+function TaskView(props) {
     const [task, setTask] = useState({})
     let { id } = useParams()
 
@@ -43,4 +43,4 @@ function Task(props) {
 
 }
 
-export default Task
+export default TaskView
