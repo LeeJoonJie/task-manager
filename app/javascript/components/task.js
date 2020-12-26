@@ -21,25 +21,6 @@ class Task extends React.Component {
         this.setState({isViewing: this.props.match.path === '/tasks/indiv/:id'})
     }
 
-    HomeButton() {
-        return (
-            <div>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    type="home"
-                    startIcon={<HomeIcon/>}
-                    onClick={() => {
-                        this.props.history.push('/')
-                    }}
-                >
-                    Home
-                </Button>
-            </div>
-        )
-    }
-
     EditButton() {
         return (
             <div>
@@ -88,7 +69,6 @@ class Task extends React.Component {
     render() {
         return (
             <div>
-                {this.HomeButton()}
 
                 {this.state.isViewing && this.EditButton()}
 

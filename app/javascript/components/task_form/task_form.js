@@ -82,31 +82,9 @@ function TaskForm(props) {
         )
     }
 
-    function HomeButton() {
-        return (
-            <div>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    type="home"
-                    startIcon={<HomeIcon/>}
-                    onClick={() => {
-                        history.push('/')
-                    }}
-                >
-                    Home
-                </Button>
-            </div>
-        )
-    }
-
-
     return (
         <form className="TaskForm" onSubmit={handleSubmit(onSubmit)}>
             <h1>TaskForm</h1>
-
-            {!is_editing && HomeButton()}
 
             {TitleTextField({
                 title: title, setTitle: setTitle,

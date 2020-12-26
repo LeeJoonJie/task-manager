@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
-      <change afterPath="$PROJECT_DIR$/app/javascript/components/task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tasks/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tasks/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/tasks_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/tasks_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/tasks_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/system/tasks_test.rb" afterDir="false" />
-    </list>
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +232,7 @@
       <workItem from="1608816728221" duration="66000" />
       <workItem from="1608817374871" duration="4907000" />
       <workItem from="1608981282305" duration="13736000" />
-      <workItem from="1608996698657" duration="1605000" />
+      <workItem from="1608996698657" duration="1873000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -442,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608981960280</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add some navigation function and logic">
+      <created>1608998499948</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1608998499948</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +457,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add validation for task fields&#10;&#10;To ensure that title, deadline, priority and is_completed is non-empty and valid." />
     <MESSAGE value="Update _form.html.erb&#10;&#10;Make minor changes to the default form created previously by generating scaffold." />
     <MESSAGE value="Add basic react route&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. App.js which is the base component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Set-up basic files for react&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. components/app.js which is the base react component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
@@ -487,7 +481,8 @@
     <MESSAGE value="Add &quot;Last Edit&quot; sorting option&#10;&#10;Implement new option to sort tasks by time last edited." />
     <MESSAGE value="Add &quot;Latest Edit&quot; sorting option&#10;&#10;Implement new option to sort tasks by time last edited." />
     <MESSAGE value="Rename task.js to task_view.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename task.js to task_view.js" />
+    <MESSAGE value="Add some navigation function and logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some navigation function and logic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608996820592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
