@@ -115,11 +115,6 @@ class TasksList extends React.Component {
                             <Card.Text>
                                 {task.progress}
                             </Card.Text>
-                            <Link to={`/tasks/indiv/${task.id}/edit`} key={task.id + 1}>
-                                <Button>
-                                    Edit Task
-                                </Button>
-                            </Link>
                             <Button onClick={() => this.deleteTask(task.id)}>Delete Task</Button>
                         </Card.Body>
                     </Card>

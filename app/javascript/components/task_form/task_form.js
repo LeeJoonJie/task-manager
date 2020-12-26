@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import axios from "axios"
 import {useForm} from "react-hook-form"
-import {useParams} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 import {Button} from '@material-ui/core'
 import SaveIcon from '@material-ui/icons/Save'
 import ProgressSlider from "./progress_slider";
@@ -9,6 +9,7 @@ import TitleTextField from "./title_text_field";
 import DescriptionTextField from "./description_text_field";
 import PrioritySelect from "./priority_select";
 import DeadlineDatePicker from "./deadline_date_picker";
+import HomeIcon from "@material-ui/icons/Home";
 
 function TaskForm(props) {
 
@@ -18,8 +19,9 @@ function TaskForm(props) {
     const [deadline, setDeadline] = useState(null)
     const [progress, setProgress] = useState(0)
 
-    let is_editing = props.match.path === '/tasks/indiv/:id/edit'
+    let is_editing = props.match.path === '/tasks/indiv/:id'
     let {id} = is_editing ? useParams() : NaN
+    let history = useHistory()
 
     // If form is being used for editing, set states to existing task values
     useEffect(() => {
@@ -54,10 +56,16 @@ function TaskForm(props) {
             method: method,
             url: url,
             data: data,
-        }).then(response => (console.log(response)))
+        }).then(response => {
+            if (is_editing) {
+                props.setParentState({isViewing: true})
+            } else {
+                history.push(`/tasks/indiv/${response.data.id}`)
+            }
+        })
     }
 
-    function renderSubmitButton() {
+    function SubmitButton() {
         return (
             <div>
                 <Button
@@ -74,10 +82,31 @@ function TaskForm(props) {
         )
     }
 
+    function HomeButton() {
+        return (
+            <div>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    type="home"
+                    startIcon={<HomeIcon/>}
+                    onClick={() => {
+                        history.push('/')
+                    }}
+                >
+                    Home
+                </Button>
+            </div>
+        )
+    }
+
 
     return (
         <form className="TaskForm" onSubmit={handleSubmit(onSubmit)}>
             <h1>TaskForm</h1>
+
+            {!is_editing && HomeButton()}
 
             {TitleTextField({
                 title: title, setTitle: setTitle,
@@ -104,7 +133,7 @@ function TaskForm(props) {
                 setValue: setValue, register: register
             })}
 
-            {renderSubmitButton()}
+            {SubmitButton()}
 
         </form>
     );

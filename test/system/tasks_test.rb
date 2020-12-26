@@ -10,22 +10,22 @@ class TasksTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Tasks"
   end
 
-  test "creating a Task" do
+  test "creating a Task_view" do
     visit tasks_url
-    click_on "New Task"
+    click_on "New Task_view"
 
     fill_in "Deadline", with: @task.deadline
     fill_in "Description", with: @task.description
     check "Is completed" if @task.is_completed
     fill_in "Priority", with: @task.priority
     fill_in "Title", with: @task.title
-    click_on "Create Task"
+    click_on "Create Task_view"
 
-    assert_text "Task was successfully created"
+    assert_text "Task_view was successfully created"
     click_on "Back"
   end
 
-  test "updating a Task" do
+  test "updating a Task_view" do
     visit tasks_url
     click_on "Edit", match: :first
 
@@ -34,18 +34,18 @@ class TasksTest < ApplicationSystemTestCase
     check "Is completed" if @task.is_completed
     fill_in "Priority", with: @task.priority
     fill_in "Title", with: @task.title
-    click_on "Update Task"
+    click_on "Update Task_view"
 
-    assert_text "Task was successfully updated"
+    assert_text "Task_view was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Task" do
+  test "destroying a Task_view" do
     visit tasks_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Task was successfully destroyed"
+    assert_text "Task_view was successfully destroyed"
   end
 end

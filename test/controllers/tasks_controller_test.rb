@@ -16,7 +16,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create task" do
-    assert_difference('Task.count') do
+    assert_difference('Task_view.count') do
       post tasks_url, params: { task: { deadline: @task.deadline, description: @task.description, is_completed: @task.is_completed, priority: @task.priority, title: @task.title } }
     end
 
@@ -39,7 +39,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy task" do
-    assert_difference('Task.count', -1) do
+    assert_difference('Task_view.count', -1) do
       delete task_url(@task)
     end
 
