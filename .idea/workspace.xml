@@ -452,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608999116798</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Update README.md">
+      <created>1609069752672</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609069752672</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add basic react route&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. App.js which is the base component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Set-up basic files for react&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. components/app.js which is the base react component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Add react-router dependencies" />
     <MESSAGE value="Add react form for adding tasks" />
@@ -497,7 +503,8 @@
     <MESSAGE value="Rename task.js to task_view.js" />
     <MESSAGE value="Add some navigation function and logic" />
     <MESSAGE value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1609068225336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
