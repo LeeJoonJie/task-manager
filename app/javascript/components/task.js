@@ -1,7 +1,6 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
-import HomeIcon from '@material-ui/icons/Home'
 import DeleteIcon from '@material-ui/icons/Delete'
 import TaskView from './task_view'
 import TaskForm from './task_form/task_form'
@@ -15,7 +14,9 @@ class Task extends React.Component {
             isViewing: true,
         }
 
-}
+        this.setState = this.setState.bind(this)
+
+    }
 
     componentDidMount() {
         this.setState({isViewing: this.props.match.path === '/tasks/indiv/:id'})
@@ -74,7 +75,7 @@ class Task extends React.Component {
 
                 {this.state.isViewing
                     ? <TaskView {...this.props} />
-                    : <TaskForm {...this.props} setParentState={this.setState.bind(this)} />}
+                    : <TaskForm {...this.props} setParentState={this.setState}/>}
 
                 {this.DeleteButton()}
             </div>

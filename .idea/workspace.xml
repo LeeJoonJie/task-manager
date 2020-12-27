@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order" />
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +59,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -233,6 +236,8 @@
       <workItem from="1608817374871" duration="4907000" />
       <workItem from="1608981282305" duration="13736000" />
       <workItem from="1608996698657" duration="1873000" />
+      <workItem from="1608998926663" duration="209000" />
+      <workItem from="1609068119978" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;&#10;Create task-manager project">
       <created>1608126282494</created>
@@ -437,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608998499948</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button">
+      <created>1608999116798</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1608999116798</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update _form.html.erb&#10;&#10;Make minor changes to the default form created previously by generating scaffold." />
     <MESSAGE value="Add basic react route&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. App.js which is the base component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Set-up basic files for react&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. components/app.js which is the base react component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Add react-router dependencies" />
@@ -482,9 +493,10 @@
     <MESSAGE value="Add &quot;Latest Edit&quot; sorting option&#10;&#10;Implement new option to sort tasks by time last edited." />
     <MESSAGE value="Rename task.js to task_view.js" />
     <MESSAGE value="Add some navigation function and logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some navigation function and logic" />
+    <MESSAGE value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1608996820592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
+    <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1609068225336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
   </component>
 </project>
