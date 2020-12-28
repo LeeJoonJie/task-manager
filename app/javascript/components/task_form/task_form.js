@@ -9,7 +9,6 @@ import TitleTextField from "./title_text_field";
 import DescriptionTextField from "./description_text_field";
 import PrioritySelect from "./priority_select";
 import DeadlineDatePicker from "./deadline_date_picker";
-import HomeIcon from "@material-ui/icons/Home";
 
 function TaskForm(props) {
 
@@ -52,6 +51,7 @@ function TaskForm(props) {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
+        console.log(data)
         axios({
             method: method,
             url: url,
