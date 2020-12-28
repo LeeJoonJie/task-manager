@@ -7,9 +7,9 @@
     <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form/priority_select.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form/priority_select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/task_form/task_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/task.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/task.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/home_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/home_page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/tasks_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +212,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Rails.rails server" />
+        <item itemvalue="Rails.rails server" />
         <item itemvalue="Rails.rails server" />
       </list>
     </recent_temporary>

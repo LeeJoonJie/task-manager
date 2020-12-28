@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   put '/tasks', to: 'tasks#index_sort'
+  delete '/tasks', to: 'tasks#destroy_all'
 
   # IMPORTANT #
   # This `match` must be the *last* route in routes.rb
