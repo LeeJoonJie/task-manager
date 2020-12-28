@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
 
-  enum priority: [:Low, :Moderate, :High]
+  enum priority: [:None, :Low, :Moderate, :High]
 
   validates :title,
             presence: true

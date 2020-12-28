@@ -13,8 +13,11 @@ class TasksController < ApplicationController
   def index_sort
     sort_field = params[:sortField]
     sort_order = params[:sortOrder].upcase # DESC or ASC
-    tasks = Task.order("#{sort_field} #{sort_order}")
-    render json: { tasks: tasks }
+    non_empty_tasks = Task.where.not("#{sort_field}": nil)
+    non_empty_tasks = non_empty_tasks.where.not("#{sort_field}": 'None') if sort_field.to_s == 'priority'
+    sorted_tasks = non_empty_tasks.order("#{sort_field} #{sort_order}")
+
+    render json: { tasks: sorted_tasks }
   end
 
   # GET /tasks/:id

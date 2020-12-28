@@ -4,6 +4,7 @@ import React from "react";
 const PrioritySelect = ({priority, setPriority, setValue, register}) => {
 
     register({name: "priority"}) // Manually register priority Select element
+    setValue("priority", priority)
 
     return (
         <div>
@@ -20,7 +21,7 @@ const PrioritySelect = ({priority, setPriority, setValue, register}) => {
                         setValue("priority", event.target.value)
                     }}
                 >
-                    <MenuItem value=""><em>none</em> </MenuItem>
+                    <MenuItem value="None"><em>none</em> </MenuItem>
                     <MenuItem value="Low">Low</MenuItem>
                     <MenuItem value="Moderate">Moderate</MenuItem>
                     <MenuItem value="High">High</MenuItem>

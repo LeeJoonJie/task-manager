@@ -111,7 +111,7 @@ class TasksList extends React.Component {
                                 moment(task.deadline.toString()).format('DD/MM/YYYY')}
                             </Card.Text>
                             <Card.Text>
-                                {task.priority}
+                                {task.priority !== 'None' && task.priority}
                             </Card.Text>
                             <Card.Text>
                                 {task.progress}

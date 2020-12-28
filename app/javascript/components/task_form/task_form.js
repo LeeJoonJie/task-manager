@@ -14,7 +14,7 @@ function TaskForm(props) {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
-    const [priority, setPriority] = useState("")
+    const [priority, setPriority] = useState("None")
     const [deadline, setDeadline] = useState(null)
     const [progress, setProgress] = useState(0)
 
@@ -51,7 +51,6 @@ function TaskForm(props) {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
-        console.log(data)
         axios({
             method: method,
             url: url,
