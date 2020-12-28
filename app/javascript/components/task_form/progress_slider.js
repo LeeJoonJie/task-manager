@@ -36,6 +36,7 @@ const PrettoSlider = withStyles({
 const ProgressSlider = ({ progress, setProgress, setValue, register }) => {
 
     register({name: "progress"}) // Manually register progress Slider element
+    setValue("progress", progress)
 
     return (
         <div>

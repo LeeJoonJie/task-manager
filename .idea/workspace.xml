@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order">
-      <change beforePath="$PROJECT_DIR$/app/models/task.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/task.rb" afterDir="false" />
-    </list>
+    <list default="true" id="54e16e4e-161c-4f07-82cf-cd6fe47ae5be" name="Default Changelist" comment="Implement feature for sorting tasks&#10;&#10;Tasks can be sorted on the home page by the following fields:&#10;1. Date of creation&#10;2. Priority&#10;3. Deadline&#10;4. Completion&#10;&#10;in either ascending or descending order" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -448,7 +446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608999116798</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Make deadline optional&#10;&#10;Change deadline to be an optional field.">
+      <created>1609159714645</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609159714646</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Delete redundant import">
+      <created>1609159910437</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1609159910437</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,8 +480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add basic react route&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. App.js which is the base component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
-    <MESSAGE value="Set-up basic files for react&#10;&#10;Created:&#10; 1. pages_controller.rb which is used to control the pages.&#10; 2. components/app.js which is the base react component of the website&#10; 3. views/pages/index.html.erb which is the single root html view." />
     <MESSAGE value="Add react-router dependencies" />
     <MESSAGE value="Add react form for adding tasks" />
     <MESSAGE value="Format task list into bootstrap cards" />
@@ -493,7 +503,9 @@
     <MESSAGE value="Rename task.js to task_view.js" />
     <MESSAGE value="Add some navigation function and logic" />
     <MESSAGE value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shift Home button&#10;&#10;Shifted to top level of app.js since all pages have a Home button" />
+    <MESSAGE value="Make deadline optional&#10;&#10;Change deadline to be an optional field." />
+    <MESSAGE value="Delete redundant import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete redundant import" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/task_manager@rails_server.rcov" NAME="rails server Coverage Results" MODIFIED="1609159355241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="task-manager" />
