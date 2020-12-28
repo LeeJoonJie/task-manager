@@ -4,8 +4,6 @@ class Task < ApplicationRecord
 
   validates :title,
             presence: true
-  validates :deadline,
-            presence: true
   validates :priority,
             inclusion: { in: Task.priorities }
   validates :progress,
