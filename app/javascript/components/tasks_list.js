@@ -4,7 +4,9 @@ import Card from 'react-bootstrap/Card'
 import axios from "axios"
 import moment from 'moment';
 import {Link} from "react-router-dom";
-import {Button} from "react-bootstrap";
+import {Button} from '@material-ui/core'
+import {DeleteForever} from "@material-ui/icons";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 class TasksList extends React.Component {
 
@@ -54,6 +56,32 @@ class TasksList extends React.Component {
         this.setState(
             {sortField: event.target.value},
             () => this.getAllTasks())
+    }
+
+    DeleteAllButton() {
+        return (
+            <div>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    size="medium"
+                    type="delete"
+                    startIcon={<DeleteForever/>}
+                    onClick={() => {
+                        if (window.confirm("Do you want to delete all tasks?")) {
+                            axios({
+                                method: 'DELETE',
+                                url: `/tasks`
+                            }).then((response) => {
+                                this.getAllTasks()
+                            })
+                        }
+                    }}
+                >
+                    Delete All Tasks
+                </Button>
+            </div>
+        )
     }
 
     renderSortTasksOptions() {
@@ -116,7 +144,14 @@ class TasksList extends React.Component {
                             <Card.Text>
                                 {task.progress}
                             </Card.Text>
-                            <Button onClick={() => this.deleteTask(task.id)}>Delete Task</Button>
+                            <Button  variant="contained"
+                                     color="secondary"
+                                     size="small"
+                                     startIcon={<DeleteIcon/>}
+                                     onClick={() => this.deleteTask(task.id)}
+                            >
+                                Delete Task
+                            </Button>
                         </Card.Body>
                     </Card>
                 ))}
@@ -128,6 +163,7 @@ class TasksList extends React.Component {
     render() {
         return (
             <div>
+                {this.DeleteAllButton()}
                 {this.renderSortTasksOptions()}
                 {this.renderAllTasks()}
             </div>

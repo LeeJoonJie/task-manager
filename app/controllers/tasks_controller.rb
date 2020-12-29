@@ -69,12 +69,22 @@ class TasksController < ApplicationController
     end
   end
 
+  # DELETE /tasks
+  # DELETE /tasks.json
+  def destroy_all
+    if Task.destroy_all
+      head :no_content, status: :ok # render just the header
+    else
+      render json: Task.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_task
     @task = Task.find(params[:id])
-    end
+  end
 
   # Only allow a list of trusted parameters through.
   def task_params
