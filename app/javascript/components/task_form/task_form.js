@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react"
 import axios from "axios"
 import {useForm} from "react-hook-form"
 import {useParams, useHistory} from "react-router-dom"
-import {Button} from '@material-ui/core'
-import SaveIcon from '@material-ui/icons/Save'
+import {Button} from "@material-ui/core"
+import SaveIcon from "@material-ui/icons/Save"
 import ProgressSlider from "./progress_slider";
 import TitleTextField from "./title_text_field";
 import DescriptionTextField from "./description_text_field";
 import PrioritySelect from "./priority_select";
 import DeadlineDatePicker from "./deadline_date_picker";
+import TagSelector from "./tag_selector"
 
 function TaskForm(props) {
 
@@ -109,6 +110,8 @@ function TaskForm(props) {
                 progress: progress, setProgress: setProgress,
                 setValue: setValue, register: register
             })}
+
+            <TagSelector/>
 
             {SubmitButton()}
 
