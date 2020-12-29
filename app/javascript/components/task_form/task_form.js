@@ -9,7 +9,7 @@ import TitleTextField from "./title_text_field";
 import DescriptionTextField from "./description_text_field";
 import PrioritySelect from "./priority_select";
 import DeadlineDatePicker from "./deadline_date_picker";
-import TagSelector from "./tag_selector"
+import TagAdder from "./tag_adder"
 
 function TaskForm(props) {
 
@@ -18,6 +18,7 @@ function TaskForm(props) {
     const [priority, setPriority] = useState("None")
     const [deadline, setDeadline] = useState(null)
     const [progress, setProgress] = useState(0)
+    const [tags, setTags] = useState(["thing"])
 
     let is_editing = props.match.path === '/tasks/indiv/:id'
     let {id} = is_editing ? useParams() : NaN
@@ -36,6 +37,7 @@ function TaskForm(props) {
                 setPriority(task.priority)
                 setDeadline(task.deadline)
                 setProgress(task.progress)
+                setTags(task.tags)
             }).catch()
         }
     }, [id])
@@ -52,6 +54,7 @@ function TaskForm(props) {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
+
         axios({
             method: method,
             url: url,
@@ -111,7 +114,10 @@ function TaskForm(props) {
                 setValue: setValue, register: register
             })}
 
-            <TagSelector/>
+            {TagAdder({
+                tags: tags, setTags: setTags,
+                setValue: setValue, register:register
+            })}
 
             {SubmitButton()}
 
