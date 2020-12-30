@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import {Button} from '@material-ui/core'
 import {DeleteForever} from "@material-ui/icons";
 import DeleteIcon from "@material-ui/icons/Delete";
+import {WithContext as ReactTags} from "react-tag-input";
 
 class TasksList extends React.Component {
 
@@ -144,6 +145,12 @@ class TasksList extends React.Component {
                             <Card.Text>
                                 {task.progress}
                             </Card.Text>
+                            <div>
+                                <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
+                                           name="tags"
+                                           readOnly={true}
+                                />
+                            </div>
                             <Button  variant="contained"
                                      color="secondary"
                                      size="small"

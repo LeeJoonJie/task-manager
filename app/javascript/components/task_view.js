@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from 'react-bootstrap/Card'
 import {useParams} from 'react-router-dom'
 import moment from "moment";
+import {WithContext as ReactTags} from "react-tag-input";
 
 function TaskView(props) {
     const [task, setTask] = useState({})
@@ -38,6 +39,12 @@ function TaskView(props) {
                     <Card.Text>
                         {task.progress}
                     </Card.Text>
+                    <div>
+                        <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
+                                   name="tags"
+                                   readOnly={true}
+                        />
+                    </div>
                 </Card.Body>
             </Card>
         </div>
