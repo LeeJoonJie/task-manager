@@ -7,7 +7,7 @@ import {WithContext as ReactTags} from "react-tag-input";
 
 function TaskView(props) {
     const [task, setTask] = useState({})
-    let { id } = useParams()
+    let {id} = useParams()
 
     useEffect(() => {
         axios({
@@ -18,37 +18,39 @@ function TaskView(props) {
         })
     }, [id])
 
-    return (
+        return (
 
-        <div>
-            <Card>
-                <Card.Body>
-                    <Card.Title>
-                        {task.title}
-                    </Card.Title>
-                    <Card.Text>
-                        {task.description}
-                    </Card.Text>
-                    <Card.Text>
-                        {task.deadline != null &&
-                        moment(task.deadline.toString()).format('DD/MM/YYYY')}
-                    </Card.Text>
-                    <Card.Text>
-                        {task.priority !== 'None' && task.priority}
-                    </Card.Text>
-                    <Card.Text>
-                        {task.progress}
-                    </Card.Text>
-                    <div>
-                        <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
-                                   name="tags"
-                                   readOnly={true}
-                        />
-                    </div>
-                </Card.Body>
-            </Card>
-        </div>
-    )
+            <div>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>
+                            {task.title}
+                        </Card.Title>
+                        <Card.Text>
+                            {task.description}
+                        </Card.Text>
+                        <Card.Text>
+                            {task.deadline != null &&
+                            moment(task.deadline.toString()).format('DD/MM/YYYY')}
+                        </Card.Text>
+                        <Card.Text>
+                            {task.priority !== 'None' && task.priority}
+                        </Card.Text>
+                        <Card.Text>
+                            {task.progress}
+                        </Card.Text>
+
+                    </Card.Body>
+                </Card>
+                <div>
+                    {task.tags && <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
+                                             name="tags"
+                                             readOnly={true}
+                    />}
+                </div>
+
+            </div>
+        )
 
 }
 

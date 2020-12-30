@@ -146,16 +146,16 @@ class TasksList extends React.Component {
                                 {task.progress}
                             </Card.Text>
                             <div>
-                                <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
-                                           name="tags"
-                                           readOnly={true}
-                                />
+                                {task.tags && <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
+                                                         name="tags"
+                                                         readOnly={true}
+                                />}
                             </div>
-                            <Button  variant="contained"
-                                     color="secondary"
-                                     size="small"
-                                     startIcon={<DeleteIcon/>}
-                                     onClick={() => this.deleteTask(task.id)}
+                            <Button variant="contained"
+                                    color="secondary"
+                                    size="small"
+                                    startIcon={<DeleteIcon/>}
+                                    onClick={() => this.deleteTask(task.id)}
                             >
                                 Delete Task
                             </Button>
