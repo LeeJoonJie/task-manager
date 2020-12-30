@@ -18,7 +18,7 @@ function TaskForm(props) {
     const [priority, setPriority] = useState("None")
     const [deadline, setDeadline] = useState(null)
     const [progress, setProgress] = useState(0)
-    const [tags, setTags] = useState(["thing"])
+    const [tags, setTags] = useState([])
 
     let is_editing = props.match.path === '/tasks/indiv/:id'
     let {id} = is_editing ? useParams() : NaN
