@@ -1,5 +1,5 @@
 import React from 'react'
-import TasksList from "./tasks_list";
+import TasksInterface from "./tasks_interface/tasks_interface";
 import { Link } from 'react-router-dom'
 
 class HomePage extends React.Component {
@@ -10,7 +10,7 @@ class HomePage extends React.Component {
             <div>
                 <h1>Task Manager </h1>
                 <Link to="/new">Add new task</Link>
-                <TasksList/>
+                <TasksInterface/>
             </div>
         )
     }

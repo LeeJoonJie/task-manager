@@ -4,7 +4,7 @@ import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import TaskView from './task_view'
 import TaskForm from './task_form/task_form'
-import axios from "axios";
+import axios from "axios"
 
 class Task extends React.Component {
 
