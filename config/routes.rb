@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :tasks
 
-  put '/tasks', to: 'tasks#index_sort'
+  put '/tasks', to: 'tasks#index_query'
   delete '/tasks', to: 'tasks#destroy_all'
 
   # IMPORTANT #

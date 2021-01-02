@@ -13,8 +13,8 @@ class TasksInterface extends React.Component {
             tasks: [],
             sortOrder: "desc",
             sortField: "created_at",
-            searchTerm: "",
-            searchField: null
+            searchString: "",
+            searchField: "all"
         }
         this.setState = this.setState.bind(this)
         this.getAllTasks = this.getAllTasks.bind(this)
@@ -25,7 +25,8 @@ class TasksInterface extends React.Component {
             // PUT method used as data cant be sent through GET method to the rails controller
             method: 'PUT',
             url: '/tasks',
-            data: {sortField: this.state.sortField, sortOrder: this.state.sortOrder},
+            data: {sortField: this.state.sortField, sortOrder: this.state.sortOrder,
+            searchString: this.state.searchString, searchField: this.state.searchField},
         }).then(response => {
             this.setState({tasks: response.data.tasks})
         })
@@ -39,7 +40,7 @@ class TasksInterface extends React.Component {
         return (
             <div>
                 <DeleteAllButton getAllTasks={this.getAllTasks} />
-                <SearchBar setState={this.setState} />
+                <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
                 <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
                 <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
             </div>

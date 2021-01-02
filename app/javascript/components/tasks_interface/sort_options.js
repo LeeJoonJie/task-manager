@@ -5,13 +5,13 @@ const SortOptions = (props) => {
     const handleOrderChange = (event) => {
         props.setState(
             {sortOrder: event.target.value},
-            () => props.getAllTasks())
+            props.getAllTasks)
     }
 
     const handleFieldChange = (event) => {
         props.setState(
             {sortField: event.target.value},
-            () => props.getAllTasks())
+            props.getAllTasks)
     }
 
     return (
