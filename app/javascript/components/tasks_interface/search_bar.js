@@ -107,6 +107,13 @@ const SearchBar = (props) => {
                 >
                     Deadline
                 </MenuItem>
+                <MenuItem
+                    name="priority"
+                    selected={props.state.searchField === "priority"}
+                    onClick={handleSearchField}
+                >
+                    Priority
+                </MenuItem>
             </Menu>
             <Divider className={classes.divider} orientation="vertical"/>
 

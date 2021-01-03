@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   # GET /tasks
   # GET /tasks.json
@@ -17,13 +17,16 @@ class TasksController < ApplicationController
     @search_string = params[:searchString]
 
     @non_empty_tasks = Task.where.not("#{@sort_field}": nil)
-    @non_empty_tasks = @non_empty_tasks.where.not("#{@sort_field}": 'None') if @sort_field.to_s == 'priority'
+    @non_empty_tasks = @non_empty_tasks.where.not("#{@sort_field}": 0) if @sort_field.to_s == 'priority'
+    # if no priority field in task
 
     @searched_tasks = case @search_field.to_s
                       when 'all'
-                        search_tags.or(search_deadline)
-                                   .or(search_description)
-                                   .or(search_title)
+                        search_tags
+                      .or(search_deadline)
+                      .or(search_description)
+                      .or(search_title)
+                      .or(search_priority)
                       when 'tags'
                         search_tags
                       when 'deadline'
@@ -32,40 +35,15 @@ class TasksController < ApplicationController
                         search_description
                       when 'title'
                         search_title
+                      when 'priority'
+                        search_priority
+                      else
+                        render json: { errors: 'No such field' }, status: :unprocessable_entity
                       end
 
     @sorted_tasks = @searched_tasks.order("#{@sort_field} #{@sort_order}")
 
     render json: { tasks: @sorted_tasks }
-  end
-
-  private
-
-  def search_tags
-    @non_empty_tasks.where("array_to_string(tags, ', ') ILIKE ? ", "%#{@search_string}%")
-  end
-
-  private
-
-  def search_deadline
-    @non_empty_tasks.where("TO_CHAR(deadline, 'DD/MM/YYYY')  ILIKE ?",
-                           "%#{@search_string}%")
-                    .or(@non_empty_tasks.where("TO_CHAR(deadline, 'DD-MM-YYYY')  ILIKE ?",
-                                               "%#{@search_string}%"))
-                    .or(@non_empty_tasks.where("TO_CHAR(deadline, 'DD MM YYYY')  ILIKE ?",
-                                               "%#{@search_string}%"))
-  end
-
-  private
-
-  def search_description
-    @non_empty_tasks.where('description ILIKE ?', "%#{@search_string}%")
-  end
-
-  private
-
-  def search_title
-    @non_empty_tasks.where('title ILIKE ?', "%#{@search_string}%")
   end
 
   # GET /tasks/:id
@@ -127,6 +105,8 @@ class TasksController < ApplicationController
     end
   end
 
+  ########################################### Private methods ######################################################
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -137,5 +117,33 @@ class TasksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def task_params
     params.require(:task).permit(:title, :description, :priority, :deadline, :progress, tags: [])
+  end
+
+  def search_tags
+    @non_empty_tasks.where("array_to_string(tags, ', ') ILIKE ? ", "%#{@search_string}%")
+  end
+
+  def search_deadline
+    @non_empty_tasks.where("TO_CHAR(deadline, 'DD/MM/YYYY')  ILIKE ?",
+                           "%#{@search_string}%")
+                    .or(@non_empty_tasks.where("TO_CHAR(deadline, 'DD-MM-YYYY')  ILIKE ?",
+                                               "%#{@search_string}%"))
+                    .or(@non_empty_tasks.where("TO_CHAR(deadline, 'DD MM YYYY')  ILIKE ?",
+                                               "%#{@search_string}%"))
+  end
+
+  def search_description
+    @non_empty_tasks.where('description ILIKE ?', "%#{@search_string}%")
+  end
+
+  def search_title
+    @non_empty_tasks.where('title ILIKE ?', "%#{@search_string}%")
+  end
+
+  def search_priority
+    priorities = Task.priorities
+                     .select { |key, _value| key.to_s.downcase.include? @search_string.to_s.downcase }
+                     .values
+    @non_empty_tasks.where(priority: priorities)
   end
 end
