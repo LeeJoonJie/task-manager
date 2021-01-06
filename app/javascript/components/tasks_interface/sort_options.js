@@ -10,9 +10,36 @@ import {TrendingDown, TrendingUp, Menu} from "@material-ui/icons"
 import Box from "@material-ui/core/Box"
 import FormLabel from '@material-ui/core/FormLabel'
 import Col from "react-bootstrap/Col"
-import {spacing} from '@material-ui/system'
+import {makeStyles} from "@material-ui/core/styles"
+import MenuIcon from "@material-ui/icons/Menu"
+import IconButton from "@material-ui/core/IconButton";
 
 // Code adapted from https://material-ui.com/components/button-group/
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        margin: 20
+    },
+    buttons: {
+        margin: 5,
+        height: 55
+    },
+    label: {
+        margin: 7,
+        color: 'black'
+    },
+    fieldButton: {
+        width: 180,
+        leftMargin: 0,
+        backgroundColor: 'skyBlue'
+    },
+    orderButtonDesc: {
+        backgroundColor: 'limeGreen'
+    },
+    orderButtonAsc: {
+        backgroundColor: 'orange'
+    }
+}))
 
 const fieldValues = ['created_at', 'updated_at', 'deadline', 'priority', 'progress']
 const fieldMap = new Map([
@@ -27,6 +54,7 @@ const SortOptions = (props) => {
 
     const [fieldOpen, setFieldOpen] = React.useState(false)
     const anchorRef = React.useRef(null)
+    const classes = useStyles()
 
     const handleOrderChange = (event) => {
         props.setState(
@@ -54,25 +82,28 @@ const SortOptions = (props) => {
     }
 
     return (
-        <Box my={15}>
+        <Box className={classes.root}>
             <Col md={8}>
-                <FormLabel>Sort by</FormLabel>
+                <FormLabel className={classes.label}>Sort by</FormLabel>
                 <ButtonGroup
                     variant="contained"
                     ref={anchorRef}
                     aria-label="split button"
+                    className={classes.buttons}
                 >
                     <Button
-                        color="primary"
                         size="large"
-                        startIcon={<Menu/>}
+                        startIcon={<MenuIcon/>}
                         onClick={handleFieldToggle}
+                        className={classes.fieldButton}
                     >
                         {fieldMap.get(props.state.sortField)}
                     </Button>
                     <Button
+                        className={props.state.sortOrder === "desc"
+                            ? classes.orderButtonDesc
+                            : classes.orderButtonAsc}
                         variant="contained"
-                        color="default"
                         size="large"
                         startIcon={props.state.sortOrder === "desc" ? <TrendingDown/> : <TrendingUp/>}
                         onClick={handleOrderChange}
@@ -87,6 +118,12 @@ const SortOptions = (props) => {
                     transition
                     disablePortal
                     placement="bottom-start"
+                    modifiers={{
+                        offset: {
+                            enabled: true,
+                            offset: 35
+                        }
+                    }}
                 >
 
                     <Paper>
