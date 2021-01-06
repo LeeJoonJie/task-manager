@@ -10,7 +10,6 @@ import MenuItem from "@material-ui/core/MenuItem"
 import Fade from "@material-ui/core/Fade"
 import Divider from "@material-ui/core/Divider"
 import Button from "@material-ui/core/Button"
-import {spacing} from '@material-ui/system'
 import Box from "@material-ui/core/Box"
 
 // Code adapted from https://material-ui.com/components/text-fields/?
@@ -26,18 +25,29 @@ const useStyles = makeStyles((theme) => ({
         flex: 1,
     },
     menuButton: {
-        padding: 15,
-        width: 150,
+        marginTop: 7,
+        marginLeft: 0,
+        marginRight: 0,
+        alignItems: 'flex-start',
+    },
+    fieldButton: {
+        marginTop: 12,
+        marginRight: 8,
+        width: 95,
         alignItems: 'flex-start',
     },
     searchButton: {
         padding: 15,
     },
     divider: {
-        height: 28,
+        paddingTop: 20,
+        height: 30,
         margin: 4
     }
 }))
+
+
+const fieldValues = ['all', 'title', 'description', 'tags', 'deadline', 'priority']
 
 const fieldMap = new Map([
     ['all', 'All'],
@@ -46,6 +56,7 @@ const fieldMap = new Map([
     ['tags', 'Tags'],
     ['deadline', 'Deadline'],
     ['priority', 'Priority']])
+
 
 const SearchBar = (props) => {
     const classes = useStyles()
@@ -71,15 +82,22 @@ const SearchBar = (props) => {
     }
 
     return (
-        <Box my={10}>
+        <Box>
             <Paper component="form" elevation={3} className={classes.root}>
-
-                <Button
+                <IconButton
                     className={classes.menuButton}
                     color="primary"
-                    size="large"
-                    startIcon={<MenuIcon/>}
+                    size="medium"
                     onClick={handleClickMenu}
+                >
+                    <MenuIcon/>
+                </IconButton>
+                <Button
+                    className={classes.fieldButton}
+                    color="primary"
+                    size="medium"
+                    onClick={handleClickMenu}
+
                 >
                     {fieldMap.get(props.state.searchField)}
                 </Button>
@@ -90,49 +108,21 @@ const SearchBar = (props) => {
                     open={open}
                     onClick={handleCloseMenu}
                     TransitionComponent={Fade}
+                    getContentAnchorEl={null}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                    transformOrigin={{ vertical: "top", horizontal: "center" }}
                 >
-                    <MenuItem
-                        name="all"
-                        selected={props.state.searchField === "all"}
-                        onClick={handleSearchField}
-                    >
-                        All
-                    </MenuItem>
-                    <MenuItem
-                        name="title"
-                        selected={props.state.searchField === "title"}
-                        onClick={handleSearchField}
-                    >
-                        Title
-                    </MenuItem>
-                    <MenuItem
-                        name="description"
-                        selected={props.state.searchField === "description"}
-                        onClick={handleSearchField}
-                    >
-                        Description
-                    </MenuItem>
-                    <MenuItem
-                        name="tags"
-                        selected={props.state.searchField === "tags"}
-                        onClick={handleSearchField}
-                    >
-                        Tags
-                    </MenuItem>
-                    <MenuItem
-                        name="deadline"
-                        selected={props.state.searchField === "deadline"}
-                        onClick={handleSearchField}
-                    >
-                        Deadline
-                    </MenuItem>
-                    <MenuItem
-                        name="priority"
-                        selected={props.state.searchField === "priority"}
-                        onClick={handleSearchField}
-                    >
-                        Priority
-                    </MenuItem>
+                    {fieldValues.map(value => (
+                        <MenuItem
+                            key={value}
+                            name={value}
+                            selected={props.state.searchField === value}
+                            onClick={handleSearchField}
+                        >
+                            {fieldMap.get(value)}
+                        </MenuItem>
+                    ))}
+
                 </Menu>
                 <Divider className={classes.divider} orientation="vertical"/>
 
