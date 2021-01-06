@@ -51,6 +51,9 @@ class Task < ApplicationRecord
   end
 
   def self.search_deadline(non_empty_tasks:, search_string:)
+    # Return everything if search string is empty
+    return non_empty_tasks if search_string.to_s == ''
+
     non_empty_tasks.where("TO_CHAR(deadline, 'DD/MM/YYYY')  ILIKE ?",
                           "%#{search_string}%")
                    .or(non_empty_tasks.where("TO_CHAR(deadline, 'DD-MM-YYYY')  ILIKE ?",
