@@ -16,9 +16,13 @@ import Box from "@material-ui/core/Box"
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        margin: 30
+
+    },
+    searchBox: {
         padding: '2px 4px',
-        display: 'flex',
         width: 500,
+        display: 'flex',
     },
     input: {
         marginLeft: theme.spacing(3),
@@ -82,8 +86,8 @@ const SearchBar = (props) => {
     }
 
     return (
-        <Box>
-            <Paper component="form" elevation={3} className={classes.root}>
+        <Box className={classes.root}>
+            <Paper component="form" elevation={3} className={classes.searchBox}>
                 <IconButton
                     className={classes.menuButton}
                     color="primary"
