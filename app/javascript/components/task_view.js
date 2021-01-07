@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import axios from "axios";
-import Card from 'react-bootstrap/Card'
-import {useParams} from 'react-router-dom'
-import moment from "moment";
-import {WithContext as ReactTags} from "react-tag-input";
+import axios from "axios"
+import {useHistory, useParams} from 'react-router-dom'
+import TaskCard from "./tasks_interface/task_card"
 
 function TaskView(props) {
-    const [task, setTask] = useState({})
+    const [task, setTask] = useState(null)
     let {id} = useParams()
+    let history = useHistory()
 
     useEffect(() => {
         axios({
@@ -18,39 +17,13 @@ function TaskView(props) {
         })
     }, [id])
 
-        return (
+    const returnToHome = () => {
+        history.push('/')
+    }
 
-            <div>
-                <Card>
-                    <Card.Body>
-                        <Card.Title>
-                            {task.title}
-                        </Card.Title>
-                        <Card.Text>
-                            {task.description}
-                        </Card.Text>
-                        <Card.Text>
-                            {task.deadline != null &&
-                            moment(task.deadline.toString()).format('DD/MM/YYYY')}
-                        </Card.Text>
-                        <Card.Text>
-                            {task.priority !== 'None' && task.priority}
-                        </Card.Text>
-                        <Card.Text>
-                            {task.progress}
-                        </Card.Text>
-
-                    </Card.Body>
-                </Card>
-                <div>
-                    {task.tags && <ReactTags tags={task.tags.map(value => ({id: value, text: value}))}
-                                             name="tags"
-                                             readOnly={true}
-                    />}
-                </div>
-
-            </div>
-        )
+    return (
+        task && <TaskCard task={task} index={null} actionAfterDelete={returnToHome}/>
+    )
 
 }
 

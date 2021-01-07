@@ -20,7 +20,7 @@ function TaskForm(props) {
     const [progress, setProgress] = useState(0)
     const [tags, setTags] = useState([])
 
-    let is_editing = props.match.path === '/tasks/indiv/:id'
+    let is_editing = props.match.path === '/tasks/indiv/:id/edit' // Check if editing or adding new task
     let {id} = is_editing ? useParams() : NaN
     let history = useHistory()
 
@@ -60,11 +60,7 @@ function TaskForm(props) {
             url: url,
             data: data,
         }).then(response => {
-            if (is_editing) {
-                props.setParentState({isViewing: true})
-            } else {
                 history.push(`/tasks/indiv/${response.data.id}`)
-            }
         })
     }
 

@@ -1,10 +1,12 @@
 import React from 'react'
-import HomePage from './home_page'
-import TaskForm from "./task_form/task_form";
-import Task from './task'
 import { Route, Switch } from 'react-router-dom'
-import {Button} from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
+import {Button} from "@material-ui/core"
+import HomeIcon from "@material-ui/icons/Home"
+import HomePage from './home_page'
+import TaskForm from "./task_form/task_form"
+import TaskView from "./task_view"
+
+
 
 class App extends React.Component {
 
@@ -34,8 +36,8 @@ class App extends React.Component {
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route exact path="/new" render={(props) => <TaskForm {...props} />} />
-                    <Route exact path="/tasks/indiv/:id" component={Task} />
-                    <Route exact path="/tasks/indiv/:id/edit" component={Task} />
+                    <Route exact path="/tasks/indiv/:id" component={TaskView} />
+                    <Route exact path="/tasks/indiv/:id/edit" render={(props) => <TaskForm {...props} />} />
                     )} />
                 </Switch>
             </div>

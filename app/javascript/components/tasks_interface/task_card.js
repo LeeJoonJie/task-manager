@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {makeStyles, withStyles} from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
@@ -15,7 +15,7 @@ import Box from "@material-ui/core/Box"
 import Chip from '@material-ui/core/Chip'
 import moment from "moment"
 import CardActionArea from '@material-ui/core/CardActionArea'
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import Grid from "@material-ui/core/Grid"
 import Button from "@material-ui/core/Button"
 import Dialog from '@material-ui/core/Dialog'
@@ -89,6 +89,7 @@ const TaskCard = (props) => {
 
     const classes = useStyles()
     const [deleteOpen, setDeleteOpen] = useState(false)
+    let history = useHistory()
 
     // For deleting individual tasks
     const deleteTask = (id) => {
@@ -96,7 +97,7 @@ const TaskCard = (props) => {
             method: 'DELETE',
             url: `/tasks/${id}`
         }).then((response) => {
-            props.getAllTasks() //id Update tasks state to update list
+            props.actionAfterDelete() //id Update tasks state to update list
         })
     }
 
@@ -106,6 +107,7 @@ const TaskCard = (props) => {
                 <Link to={`/tasks/indiv/${props.task.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <CardHeader
                         avatar={
+                            props.index !== null &&
                             <Avatar className={classes.avatar}>
                                 {props.index + 1}
                             </Avatar>
@@ -172,12 +174,10 @@ const TaskCard = (props) => {
                 </Box>
             </CardContent>
             <CardActions disableSpacing className={classes.actions}>
-                <IconButton>
+                <IconButton onClick={() => history.push(`/tasks/indiv/${props.task.id}/edit`)}>
                     <EditIcon/>
                 </IconButton>
-                <IconButton
-                    onClick={() => setDeleteOpen(true)}
-                >
+                <IconButton onClick={() => setDeleteOpen(true)}>
                     <DeleteIcon/>
                 </IconButton>
                 <Dialog

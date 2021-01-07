@@ -4,6 +4,7 @@ import SearchBar from "./search_bar"
 import SortOptions from "./sort_options"
 import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
+import Grid from "@material-ui/core/Grid"
 
 class TasksInterface extends React.Component {
 
@@ -22,7 +23,7 @@ class TasksInterface extends React.Component {
 
     getAllTasks() {
         axios({
-            // PUT method used as data cant be sent through GET method to the rails controller
+            // PUT method used because data cant be sent through GET method to the rails controller
             method: 'PUT',
             url: '/tasks',
             data: {sortField: this.state.sortField, sortOrder: this.state.sortOrder,
@@ -40,8 +41,14 @@ class TasksInterface extends React.Component {
         return (
             <div>
                 <DeleteAllButton getAllTasks={this.getAllTasks} />
-                <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
-                <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
+                <Grid container spacing={5}>
+                    <Grid item>
+                        <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
+                    </Grid>
+                    <Grid item>
+                        <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks} />
+                    </Grid>
+                </Grid>
                 <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
             </div>
         )
