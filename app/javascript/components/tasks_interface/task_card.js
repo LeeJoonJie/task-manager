@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {makeStyles, withStyles} from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
@@ -14,6 +14,15 @@ import axios from "axios"
 import Box from "@material-ui/core/Box"
 import Chip from '@material-ui/core/Chip'
 import moment from "moment"
+import CardActionArea from '@material-ui/core/CardActionArea'
+import {Link} from "react-router-dom"
+import Grid from "@material-ui/core/Grid"
+import Button from "@material-ui/core/Button"
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
 
 // Code adapted from https://material-ui.com/components/cards/
 // and https://material-ui.com/components/progress/w
@@ -21,21 +30,44 @@ import moment from "moment"
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 500,
-        margin: 20
+        margin: 20,
     },
     avatar: {
         background: 'white',
-        color: 'black'
+        color: 'black',
+        alignItems: 'flex-start',
+        fontSize: `1.2rem`
     },
     priorityLow: {
-        backgroundColor: 'lightGreen'
+        borderColor: 'green',
+        color: 'green',
+        border: '3px solid'
     },
     priorityModerate: {
-        backgroundColor: 'lightSalmon'
+        borderColor: 'steelBlue',
+        color: `steelBlue`,
+        border: '3px solid'
     },
     priorityHigh: {
-        backgroundColor: 'red'
+        borderColor: 'red',
+        color: 'red',
+        border: '3px solid'
     },
+    priorityNone: {
+        borderColor: 'white'
+    },
+    headerAction: {
+        margin: 15
+    },
+    actions: {
+        justifyContent: 'flex-end'
+    },
+    tags: {
+        "&:disabled": {
+            backgroundColor: 'lightGrey',
+            color: 'black'
+        }
+    }
 
 }))
 
@@ -56,67 +88,117 @@ const BorderLinearProgress = withStyles((theme) => ({
 const TaskCard = (props) => {
 
     const classes = useStyles()
+    const [deleteOpen, setDeleteOpen] = useState(false)
 
     // For deleting individual tasks
     const deleteTask = (id) => {
-        if (window.confirm("Do you want to delete this task?")) {
-            axios({
-                method: 'DELETE',
-                url: `/tasks/${id}`
-            }).then((response) => {
-                props.getAllTasks() //id Update tasks state to update list
-            })
-        }
+        axios({
+            method: 'DELETE',
+            url: `/tasks/${id}`
+        }).then((response) => {
+            props.getAllTasks() //id Update tasks state to update list
+        })
     }
 
     return (
         <Card className={classes.root} variant="outlined">
-            <Box display="flex" alignItems="center">
-                <CardHeader
-                    avatar={
-                        <Avatar className={classes.avatar}>
-                            {props.index + 1}
-                        </Avatar>
-                    }
-
-                    title={props.task.title}
-                    subheader={props.task.deadline != null
-                    && `Deadline: ${moment(props.task.deadline.toString()).format('DD-MM-YYYY')}`}
-                />
-                {props.task.priority !== "None" && <Chip
-                    className={props.task.priority === "High" ? classes.priorityHigh
-                        : props.task.priority === "Moderate" ? classes.priorityModerate
-                            : props.task.priority === "Low" ? classes.priorityLow
-                                : null}
-                    label={props.task.priority}
-                />}
-            </Box>
+            <CardActionArea>
+                <Link to={`/tasks/indiv/${props.task.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
+                    <CardHeader
+                        avatar={
+                            <Avatar className={classes.avatar}>
+                                {props.index + 1}
+                            </Avatar>
+                        }
+                        action={
+                            <Chip
+                                className={props.task.priority === "High" ? classes.priorityHigh
+                                    : props.task.priority === "Moderate" ? classes.priorityModerate
+                                        : props.task.priority === "Low" ? classes.priorityLow
+                                            : classes.priorityNone}
+                                variant="outlined"
+                                size="medium"
+                                label={props.task.priority !== "None" &&
+                                <Typography variant="subtitle1">
+                                    {props.task.priority}
+                                </Typography>}
+                            />}
+                        classes={{action: classes.headerAction}}
+                        title={
+                            <Typography variant="h5" color="textPrimary">
+                                {props.task.title}
+                            </Typography>}
+                        subheader={
+                            <Typography variant="body1" color="textSecondary">
+                                {props.task.deadline !== null ?
+                                    `Deadline: ${moment(props.task.deadline.toString()).format('DD-MM-YYYY')}`
+                                    : 'No deadline'}
+                            </Typography>}
+                    />
+                </Link>
+            </CardActionArea>
+            <CardContent>
+                <Grid container spacing={1}>
+                    {props.task.tags.map(tag => (
+                        <Grid item key={tag}>
+                            <Button
+                                disabled
+                                key={tag}
+                                className={classes.tags}
+                                size="small"
+                                variant="contained"
+                            >
+                                {tag}
+                            </Button>
+                        </Grid>
+                    ))}
+                </Grid>
+            </CardContent>
 
             <CardContent>
-                <Typography variant="body1" color="textSecondary" component="p">
+                <Typography variant="body1" color="textPrimary" component="p">
                     {props.task.description}
                 </Typography>
             </CardContent>
 
             <CardContent>
                 <Box display="flex" alignItems="center">
-                    <Box width="100%" mr={1}>
+                    <Box width="100%" mr={2}>
                         <BorderLinearProgress variant="determinate" value={props.task.progress}/>
                     </Box>
-                    <Typography variant="body1" color="textSecondary">
+                    <Typography variant="body1" color="textPrimary">
                         {`${props.task.progress}%`}
                     </Typography>
                 </Box>
             </CardContent>
-            <CardActions disableSpacing>
+            <CardActions disableSpacing className={classes.actions}>
                 <IconButton>
                     <EditIcon/>
                 </IconButton>
                 <IconButton
-                    onClick={() => deleteTask(props.task.id)}
+                    onClick={() => setDeleteOpen(true)}
                 >
                     <DeleteIcon/>
                 </IconButton>
+                <Dialog
+                    open={deleteOpen}
+                    onClose={() => setDeleteOpen(false)}
+                >
+                    <DialogTitle>Delete Task?</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            {`Are you sure you want to delete ${props.task.title}?`}
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => setDeleteOpen(false)} color="primary">
+                            Cancel
+                        </Button>
+                        <Button onClick={() => deleteTask(props.task.id)} color="secondary" autoFocus>
+                            Okay
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </CardActions>
 
         </Card>
