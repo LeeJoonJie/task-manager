@@ -1,13 +1,21 @@
-import {TextField} from "@material-ui/core";
-import React from "react";
+import {TextField} from "@material-ui/core"
+import React from "react"
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '60%'
+    },
+}))
 
 const DescriptionTextField = ({ description, setDescription, register }) => {
+    const classes = useStyles()
 
     return (
-        <div>
             <TextField
                 variant="outlined"
                 margin="dense"
+                className={classes.root}
                 inputRef={register}
                 id="description"
                 label="Description"
@@ -18,7 +26,6 @@ const DescriptionTextField = ({ description, setDescription, register }) => {
                 rows="10"
                 size="medium"
             />
-        </div>
     )
 }
 

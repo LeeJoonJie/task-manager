@@ -4,21 +4,34 @@ import {useForm} from "react-hook-form"
 import {useParams, useHistory} from "react-router-dom"
 import {Button} from "@material-ui/core"
 import SaveIcon from "@material-ui/icons/Save"
-import ProgressSlider from "./progress_slider";
-import TitleTextField from "./title_text_field";
-import DescriptionTextField from "./description_text_field";
-import PrioritySelect from "./priority_select";
-import DeadlineDatePicker from "./deadline_date_picker";
+import ProgressSlider from "./progress_slider"
+import TitleTextField from "./title_text_field"
+import DescriptionTextField from "./description_text_field"
+import PrioritySelect from "./priority_select"
+import DeadlineDatePicker from "./deadline_date_picker"
 import TagAdder from "./tag_adder"
+import Paper from '@material-ui/core/Paper'
+import {makeStyles} from "@material-ui/core/styles"
+import Grid from '@material-ui/core/Grid'
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        padding: 50,
+        margin: 30,
+        width: '30%'
+
+    },
+}))
 
 function TaskForm(props) {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
-    const [priority, setPriority] = useState("None")
+    const [priority, setPriority] = useState("")
     const [deadline, setDeadline] = useState(null)
     const [progress, setProgress] = useState(0)
     const [tags, setTags] = useState([])
+    const classes = useStyles()
 
     let is_editing = props.match.path === '/tasks/indiv/:id/edit' // Check if editing or adding new task
     let {id} = is_editing ? useParams() : NaN
@@ -54,13 +67,13 @@ function TaskForm(props) {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
-
+        console.log(data.priority)
         axios({
             method: method,
             url: url,
             data: data,
         }).then(response => {
-                history.push(`/tasks/indiv/${response.data.id}`)
+            history.push(`/tasks/indiv/${response.data.id}`)
         })
     }
 
@@ -82,43 +95,59 @@ function TaskForm(props) {
     }
 
     return (
-        <form className="TaskForm" onSubmit={handleSubmit(onSubmit)}>
-            <h1>TaskForm</h1>
+        <Paper className={classes.root} variant="outlined">
+            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)}>
+                <Grid container direction="column" spacing={3}>
+                    <Grid item>
+                        <h1>{is_editing ? 'Edit Task' : 'Add Task'}</h1>
+                    </Grid>
 
-            {TitleTextField({
-                title: title, setTitle: setTitle,
-                errors: errors, register: register
-            })}
+                    <Grid item>
+                        {TitleTextField({
+                            title: title, setTitle: setTitle,
+                            errors: errors, register: register
+                        })}
+                    </Grid>
 
-            {DescriptionTextField({
-                description: description, setDescription: setDescription,
-                register: register
-            })}
+                    <Grid item>
+                        {DescriptionTextField({
+                            description: description, setDescription: setDescription,
+                            register: register
+                        })}
+                    </Grid>
 
-            {PrioritySelect({
-                priority: priority, setPriority: setPriority,
-                setValue: setValue, register: register
-            })}
+                    <Grid item>
+                        {PrioritySelect({
+                            priority: priority, setPriority: setPriority,
+                            setValue: setValue, register: register
+                        })}
+                    </Grid>
+                    <Grid item>
+                        {DeadlineDatePicker({
+                            deadline: deadline, setDeadline: setDeadline,
+                            setValue: setValue, register: register()
+                        })}
+                    </Grid>
+                    <Grid item>
+                        {ProgressSlider({
+                            progress: progress, setProgress: setProgress,
+                            setValue: setValue, register: register
+                        })}
+                    </Grid>
+                    <Grid item>
+                        {TagAdder({
+                            tags: tags, setTags: setTags,
+                            setValue: setValue, register: register
+                        })}
+                    </Grid>
+                    <Grid item>
+                        {SubmitButton()}
+                    </Grid>
+                </Grid>
 
-            {DeadlineDatePicker({
-                deadline: deadline, setDeadline: setDeadline,
-                setValue: setValue, register: register()
-            })}
-
-            {ProgressSlider({
-                progress: progress, setProgress: setProgress,
-                setValue: setValue, register: register
-            })}
-
-            {TagAdder({
-                tags: tags, setTags: setTags,
-                setValue: setValue, register:register
-            })}
-
-            {SubmitButton()}
-
-        </form>
-    );
+            </form>
+        </Paper>
+    )
 }
 
 export default TaskForm

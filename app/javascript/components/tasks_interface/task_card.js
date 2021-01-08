@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
     priorityModerate: {
         borderColor: 'steelBlue',
-        color: `steelBlue`,
+        color: 'steelBlue',
         border: '3px solid'
     },
     priorityHigh: {
