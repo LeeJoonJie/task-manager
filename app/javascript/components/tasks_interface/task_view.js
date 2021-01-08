@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import {useHistory, useParams} from 'react-router-dom'
-import TaskCard from "./tasks_interface/task_card"
+import TaskCard from "./task_card"
 
 function TaskView(props) {
     const [task, setTask] = useState(null)

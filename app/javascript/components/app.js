@@ -4,7 +4,7 @@ import {Button} from "@material-ui/core"
 import HomeIcon from "@material-ui/icons/Home"
 import HomePage from './home_page'
 import TaskForm from "./task_form/task_form"
-import TaskView from "./task_view"
+import TaskView from "./tasks_interface/task_view"
 
 
 
