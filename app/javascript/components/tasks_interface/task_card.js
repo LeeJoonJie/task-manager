@@ -23,6 +23,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import Tooltip from '@material-ui/core/Tooltip'
 
 // Code adapted from https://material-ui.com/components/cards/
 // and https://material-ui.com/components/progress/w
@@ -174,12 +175,16 @@ const TaskCard = (props) => {
                 </Box>
             </CardContent>
             <CardActions disableSpacing className={classes.actions}>
-                <IconButton onClick={() => history.push(`/tasks/indiv/${props.task.id}/edit`)}>
-                    <EditIcon/>
-                </IconButton>
-                <IconButton onClick={() => setDeleteOpen(true)}>
-                    <DeleteIcon/>
-                </IconButton>
+                <Tooltip title="Edit">
+                    <IconButton onClick={() => history.push(`/tasks/indiv/${props.task.id}/edit`)}>
+                        <EditIcon/>
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title="Delete">
+                    <IconButton onClick={() => setDeleteOpen(true)}>
+                        <DeleteIcon/>
+                    </IconButton>
+                </Tooltip>
                 <Dialog
                     open={deleteOpen}
                     onClose={() => setDeleteOpen(false)}
