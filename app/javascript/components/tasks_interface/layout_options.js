@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-const ArrangementOptions = (props) => {
+const LayoutOptions = (props) => {
 
     const [optionsOpen, setOptionsOpen] = React.useState(false)
     const anchorRef = React.useRef(null)
@@ -39,7 +39,7 @@ const ArrangementOptions = (props) => {
     const handleOptionChange = (event, index) => {
         setOptionsOpen(false)
         props.setState(
-            {arrangement: optionValues[index]},
+            {layout: optionValues[index]},
             props.getAllTasks)
     }
 
@@ -58,7 +58,7 @@ const ArrangementOptions = (props) => {
     return (
         <Box>
             <Col md={8}>
-                <FormLabel className={classes.label}>Arrangement</FormLabel>
+                <FormLabel className={classes.label}>Layout</FormLabel>
                 <Button
                     className={classes.button}
                     ref={anchorRef}
@@ -67,7 +67,7 @@ const ArrangementOptions = (props) => {
                     onClick={handleOptionToggle}
                     className={classes.optionButton}
                 >
-                    {props.state.arrangement}
+                    {props.state.layout}
                 </Button>
                 <Popper
                     open={optionsOpen}
@@ -89,7 +89,7 @@ const ArrangementOptions = (props) => {
                                 {optionValues.map((option, index) => (
                                     <MenuItem
                                         key={option}
-                                        selected={option === props.state.arrangement}
+                                        selected={option === props.state.layout}
                                         onClick={(event) => handleOptionChange(event, index)}
                                     >
                                         {option}
@@ -106,4 +106,4 @@ const ArrangementOptions = (props) => {
 
 }
 
-export default ArrangementOptions
+export default LayoutOptions

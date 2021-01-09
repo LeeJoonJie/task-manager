@@ -5,7 +5,7 @@ import SortOptions from "./sort_options"
 import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
 import Grid from "@material-ui/core/Grid"
-import ArrangementOptions from "./arrangement_options";
+import LayoutOptions from "./layout_options";
 
 class TasksInterface extends React.Component {
 
@@ -17,7 +17,7 @@ class TasksInterface extends React.Component {
             sortField: "created_at",
             searchString: "",
             searchField: "all",
-            arrangement: "List"
+            layout: "List"
         }
         this.setState = this.setState.bind(this)
         this.getAllTasks = this.getAllTasks.bind(this)
@@ -50,7 +50,7 @@ class TasksInterface extends React.Component {
                         <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
                     <Grid item>
-                        <ArrangementOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
+                        <LayoutOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
                     <Grid item>
                         <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
