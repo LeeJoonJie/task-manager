@@ -1,7 +1,4 @@
----
-layout: page
-title: User Guide
----
+# Task Manager
 
 <div markdown="block" class="alert alert-secondary">
 * Table of Contents
