@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 20,
     },
     avatar: {
-        background: 'white',
+        background: 'whiteSmoke',
         color: 'black',
         alignItems: 'flex-start',
         fontSize: `1.2rem`
@@ -55,7 +55,10 @@ const useStyles = makeStyles((theme) => ({
         border: '3px solid'
     },
     priorityNone: {
-        borderColor: 'white'
+        borderColor: 'whiteSmoke'
+    },
+    header: {
+        backgroundColor: 'whiteSmoke'
     },
     headerAction: {
         margin: 15
@@ -107,6 +110,7 @@ const TaskCard = (props) => {
             <CardActionArea>
                 <Link to={`/tasks/indiv/${props.task.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <CardHeader
+                        className={classes.header}
                         avatar={
                             props.index !== null &&
                             <Avatar className={classes.avatar}>

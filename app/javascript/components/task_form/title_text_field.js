@@ -10,16 +10,10 @@ const useStyles = makeStyles((theme) => ({
             }
     },
     textField: {
-        width: '50%'
+        width: '50%',
     },
 
 }))
-
-const error = () => {
-    return (
-        Typography
-    )
-}
 
 const TitleTextField = ({title, setTitle, errors, register}) => {
     const classes = useStyles()
@@ -29,6 +23,8 @@ const TitleTextField = ({title, setTitle, errors, register}) => {
             <div>
                 <TextField
                     variant="outlined"
+                    multiline={true}
+                    rows={2}
                     className={classes.textField}
                     margin="dense"
                     inputRef={register({required: "Please provide a title"})}

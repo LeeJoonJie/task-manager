@@ -13,12 +13,13 @@ import TagAdder from "./tag_adder"
 import Paper from '@material-ui/core/Paper'
 import {makeStyles} from "@material-ui/core/styles"
 import Grid from '@material-ui/core/Grid'
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: 50,
         margin: 30,
-        width: '30%'
+        width: '60%'
 
     },
 }))
@@ -79,7 +80,7 @@ function TaskForm(props) {
 
     function SubmitButton() {
         return (
-            <div>
+            <Box textAlign='center' style={{margin:20}}>
                 <Button
                     variant="contained"
                     color="primary"
@@ -90,7 +91,7 @@ function TaskForm(props) {
                 >
                     {is_editing ? "Save" : "Submit"}
                 </Button>
-            </div>
+            </Box>
         )
     }
 

@@ -64,7 +64,9 @@ const TagAdder = ({tags, setTags, setValue, register}) => {
                        handleDelete={handleDelete}
                        handleAddition={handleAddition}
                        handleDrag={handleDrag}
+                       autofocus={false}
                        delimiters={delimiters}
+                       placeholder="Tag"
                        name="tags"
                        inputFieldPosition="top"
                        maxLength={20}
