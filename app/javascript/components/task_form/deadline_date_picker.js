@@ -1,4 +1,4 @@
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
+import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers"
 import DateFnsUtils from "@date-io/date-fns"
 import React from "react"
 import {makeStyles} from "@material-ui/core/styles"
