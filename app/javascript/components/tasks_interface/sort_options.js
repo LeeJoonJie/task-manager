@@ -38,10 +38,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const fieldValues = ['created_at', 'updated_at', 'deadline', 'priority', 'progress']
+const fieldValues = ['created_at', 'deadline', 'priority', 'progress']
 const fieldMap = new Map([
     ['created_at', 'Created At'],
-    ['updated_at', 'Last Edit'],
     ['deadline', 'Deadline'],
     ['priority', 'Priority'],
     ['progress', 'Progress']])
