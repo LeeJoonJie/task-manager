@@ -11,10 +11,12 @@ Developed by: Lee Joon Jie (A0206311Y)
 * Tag tasks with optional categories
 * Search for tasks
 
+... and more!
+
 See the User Guide for more detailed documentation and examples
 
 ### Quick Links:
-* [User Guide (coming soon)](https://breadpeanutbutter.github.io/task-manager/UserGuide.html)
+* [User Guide](https://breadpeanutbutter.github.io/task-manager/UserGuide.html)
 * [Task Manager Website (coming soon)]()
 
 ### Tech Stack:
