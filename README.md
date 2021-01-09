@@ -14,7 +14,7 @@ Developed by: Lee Joon Jie (A0206311Y)
 See the User Guide for more detailed documentation and examples
 
 ### Quick Links:
-* [User Guide (coming soon)]()
+* [User Guide (coming soon)](https://breadpeanutbutter.github.io/task-manager/UserGuide.html)
 * [Task Manager Website (coming soon)]()
 
 ### Tech Stack:
