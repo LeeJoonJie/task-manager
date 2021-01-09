@@ -16,12 +16,10 @@ import MenuIcon from "@material-ui/icons/Menu"
 // Code adapted from https://material-ui.com/components/button-group/
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        margin: 20
-    },
+
     buttons: {
         margin: 5,
-        height: 55
+        height: 40
     },
     label: {
         margin: 7,
@@ -81,7 +79,7 @@ const SortOptions = (props) => {
     }
 
     return (
-        <Box className={classes.root}>
+        <Box>
             <Col md={8}>
                 <FormLabel className={classes.label}>Sort by</FormLabel>
                 <ButtonGroup
