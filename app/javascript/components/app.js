@@ -1,11 +1,13 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-import HomePage from "./home_page/home_page";
+import HomePage from "./home_page/home_page"
 import TaskForm from "./task_form/task_form"
 import TaskView from "./task_view"
 import AppHeader from "./app_header"
 import {withStyles} from "@material-ui/core"
-import Box from "@material-ui/core/Box";
+import Box from "@material-ui/core/Box"
+import ScrollTop from "./scroll_top"
+import Toolbar from "@material-ui/core/Toolbar";
 
 const styles = {
     box: {
@@ -21,7 +23,8 @@ class App extends React.Component {
 
         return (
             <div>
-                <AppHeader/>
+                <AppHeader />
+                <Toolbar id="back-to-top-anchor" />
                 <Box className={classes.box}>
                     <Switch>
                         <Route exact path="/" component={HomePage}/>
@@ -31,6 +34,7 @@ class App extends React.Component {
                         )} />
                     </Switch>
                 </Box>
+                <ScrollTop {...this.props}/>
             </div>
 
         )
