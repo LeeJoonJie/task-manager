@@ -16,7 +16,7 @@ const TasksList = (props) => {
             container
             direction={props.state.layout=== "List" ? "column" : "row"}
             spacing={1}
-            justify="flex-start]"
+            justify="flex-start"
         >
             {props.state.tasks.map((task, index) => (
                 <Grid

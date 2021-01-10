@@ -6,8 +6,9 @@ import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
 import Grid from "@material-ui/core/Grid"
 import LayoutOptions from "./layout_options";
+import {Link} from "react-router-dom";
 
-class TasksInterface extends React.Component {
+class HomePage extends React.Component {
 
     constructor(props) {
         super(props)
@@ -45,6 +46,7 @@ class TasksInterface extends React.Component {
         return (
             <div>
                 <DeleteAllButton getAllTasks={this.getAllTasks}/>
+                <Link to="/new">Add new task</Link>
                 <Grid container spacing={2} style={{margin: "25px 0px 150px 0px"}}>
                     <Grid item>
                         <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
@@ -63,4 +65,4 @@ class TasksInterface extends React.Component {
 
 }
 
-export default TasksInterface
+export default HomePage
