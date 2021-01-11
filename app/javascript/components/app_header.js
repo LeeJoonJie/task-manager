@@ -36,12 +36,7 @@ const useStyles = makeStyles((theme) => ({
     tabs: {
         color: 'white'
     },
-    divider: {
-        padding: 0,
-        height: 30,
-        margin: 4,
-        background: 'white'
-    }
+
 }))
 
 const AppHeader = (props) => {

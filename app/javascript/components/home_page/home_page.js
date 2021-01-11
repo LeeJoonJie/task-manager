@@ -6,8 +6,7 @@ import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
 import Grid from "@material-ui/core/Grid"
 import LayoutOptions from "./layout_options"
-import AddTaskButton from "./add_task_button"
-
+import Typography from "@material-ui/core/Typography";
 
 class HomePage extends React.Component {
 
@@ -19,7 +18,7 @@ class HomePage extends React.Component {
             sortField: "created_at",
             searchString: "",
             searchField: "all",
-            layout: "List"
+            layout: "List",
         }
         this.setState = this.setState.bind(this)
         this.getAllTasks = this.getAllTasks.bind(this)
@@ -47,19 +46,20 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <DeleteAllButton getAllTasks={this.getAllTasks}/>
-                <AddTaskButton/>
-                <Grid container spacing={2} style={{margin: "25px 0px 150px 0px"}}>
+                <Grid container spacing={2} style={{margin: "0px 0px 20px 0px"}}>
+                    <Grid item>
+                        <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
+                    </Grid>
                     <Grid item>
                         <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
                     <Grid item>
                         <LayoutOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
-                    <Grid item>
-                        <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
-                    </Grid>
+
                 </Grid>
+                <Typography>{`Found ${this.state.tasks.length} tasks!`}</Typography>
+                <DeleteAllButton getAllTasks={this.getAllTasks}/>
                 <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
 
             </div>

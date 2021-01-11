@@ -16,11 +16,11 @@ const optionValues = ['List', 'Grid 2/row', 'Grid 3/row', 'Grid 4/row']
 const useStyles = makeStyles((theme) => ({
 
     button: {
-        margin: 5,
+        margin: '2px 10px 10px 10px',
         height: 40
     },
     label: {
-        margin: 7,
+        margin: '7px 7px 9px 7px',
         color: 'black'
     },
     optionButton: {

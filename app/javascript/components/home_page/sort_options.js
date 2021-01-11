@@ -18,7 +18,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 const useStyles = makeStyles((theme) => ({
 
     buttons: {
-        margin: 5,
+        margin: '2px 10px 10px 10px',
         height: 40
     },
     label: {
@@ -26,14 +26,19 @@ const useStyles = makeStyles((theme) => ({
         color: 'black'
     },
     fieldButton: {
-        width: 180,
+        margin: 0,
+        width: 170,
         leftMargin: 0,
         background: 'linear-gradient(45deg, #21a9f3 30%, #21CBF3 90%)'
     },
     orderButtonDesc: {
+        margin: 0,
+        width: 90,
         background: 'linear-gradient(315deg, #f2cf07 0%, #55d284 74%)'
     },
     orderButtonAsc: {
+        margin: 0,
+        width: 90,
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
     }
 }))

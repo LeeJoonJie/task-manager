@@ -16,7 +16,7 @@ import Box from "@material-ui/core/Box"
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: 30
+        margin: 15
 
     },
     searchBox: {

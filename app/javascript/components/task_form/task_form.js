@@ -92,7 +92,7 @@ const TaskForm = (props) => {
                     type="submit"
                     startIcon={is_editing ? <SaveIcon/> : null}
                 >
-                    {is_editing ? "Save" : "Submit"}
+                    {is_editing ? "Save" : "Add"}
                 </Button>
             </Box>
         )

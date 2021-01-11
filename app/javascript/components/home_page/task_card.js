@@ -100,6 +100,7 @@ const TaskCard = (props) => {
             method: 'DELETE',
             url: `/tasks/${id}`
         }).then((response) => {
+            setDeleteOpen(false)
             props.actionAfterDelete() //id Update tasks state to update list
         })
     }

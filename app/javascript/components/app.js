@@ -11,7 +11,12 @@ import Toolbar from "@material-ui/core/Toolbar";
 
 const styles = {
     box: {
-        padding: 15
+        padding: '0px 30px 0px 30px'
+    },
+    toolbar: {
+        height: 0,
+        margin: 0,
+        padding: 0,
     }
 }
 
@@ -36,7 +41,7 @@ class App extends React.Component {
             <div>
                 <AppHeader tabValue={this.state.tabValue}
                            setTabValue={this.setTabValue} />
-                <Toolbar id="back-to-top-anchor" />
+                <Toolbar id="back-to-top-anchor" className={classes.toolbar}/>
                 <Box className={classes.box}>
                     <Switch>
                         <Route exact path="/" render={(props) =>

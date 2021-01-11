@@ -10,7 +10,7 @@ const AddTaskButton = (props) => {
             <Button
                 variant="outlined"
                 color="primary"
-                size="medium"
+                size="large"
                 type="add"
                 startIcon={<Add/>}
                 onClick={() => {

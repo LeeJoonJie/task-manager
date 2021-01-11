@@ -1,30 +1,58 @@
 import {DeleteForever} from "@material-ui/icons"
 import {Button} from "@material-ui/core"
 import axios from "axios"
-import React from "react"
+import React, {useState} from "react"
+import Tooltip from "@material-ui/core/Tooltip";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
+import Dialog from "@material-ui/core/Dialog";
 
 const DeleteAllButton = (props) => {
+
+    const [deleteAllOpen, setDeleteAllOpen] = useState(false)
+
     return (
         <div>
-            <Button
-                variant="outlined"
-                color="secondary"
-                size="medium"
-                type="delete"
-                startIcon={<DeleteForever/>}
-                onClick={() => {
-                    if (window.confirm("Do you want to delete all tasks?")) {
-                        axios({
-                            method: 'DELETE',
-                            url: `/tasks`
-                        }).then((response) => {
-                            props.getAllTasks()
-                        })
-                    }
-                }}
+            <Tooltip title="Delete All Tasks">
+                <Button
+                    variant="outlined"
+                    color="secondary"
+                    size="large"
+                    type="delete"
+                    style={{margin: 20}}
+                    startIcon={<DeleteForever/>}
+                    onClick={() => setDeleteAllOpen(true)}
+                >
+                    Delete All
+                </Button>
+            </Tooltip>
+            <Dialog
+                open={deleteAllOpen}
+                onClose={() => setDeleteAllOpen(false)}
             >
-                Delete All
-            </Button>
+                <DialogTitle>Delete All Tasks?</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        {`Are you sure you want to delete all tasks? This action cannot be undone.`}
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setDeleteAllOpen(false)} color="primary">
+                        Cancel
+                    </Button>
+                    <Button
+                        onClick={() => axios({method: 'DELETE', url: `/tasks`})
+                            .then((response) => {
+                                setDeleteAllOpen(false)
+                                props.getAllTasks()
+                            })} color="secondary" autoFocus
+                    >
+                        Okay
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 
