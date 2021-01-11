@@ -5,8 +5,9 @@ import SortOptions from "./sort_options"
 import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
 import Grid from "@material-ui/core/Grid"
-import LayoutOptions from "./layout_options";
-import {Link} from "react-router-dom";
+import LayoutOptions from "./layout_options"
+import AddTaskButton from "./add_task_button"
+
 
 class HomePage extends React.Component {
 
@@ -40,13 +41,14 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.getAllTasks()
+        this.props.setTabValue(0)
     }
 
     render() {
         return (
             <div>
                 <DeleteAllButton getAllTasks={this.getAllTasks}/>
-                <Link to="/new">Add new task</Link>
+                <AddTaskButton/>
                 <Grid container spacing={2} style={{margin: "25px 0px 150px 0px"}}>
                     <Grid item>
                         <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
@@ -59,6 +61,7 @@ class HomePage extends React.Component {
                     </Grid>
                 </Grid>
                 <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
+
             </div>
         )
     }

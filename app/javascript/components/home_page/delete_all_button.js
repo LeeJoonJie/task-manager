@@ -1,5 +1,5 @@
-import {Button} from "@material-ui/core"
 import {DeleteForever} from "@material-ui/icons"
+import {Button} from "@material-ui/core"
 import axios from "axios"
 import React from "react"
 
@@ -7,7 +7,7 @@ const DeleteAllButton = (props) => {
     return (
         <div>
             <Button
-                variant="contained"
+                variant="outlined"
                 color="secondary"
                 size="medium"
                 type="delete"
@@ -23,7 +23,7 @@ const DeleteAllButton = (props) => {
                     }
                 }}
             >
-                Delete All Tasks
+                Delete All
             </Button>
         </div>
     )

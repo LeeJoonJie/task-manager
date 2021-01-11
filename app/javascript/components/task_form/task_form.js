@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-function TaskForm(props) {
+const TaskForm = (props) => {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -41,6 +41,7 @@ function TaskForm(props) {
     // If form is being used for editing, set states to existing task values
     useEffect(() => {
         if (!isNaN(id)) {
+            props.setTabValue(-1)
             axios({
                 method: 'GET',
                 url: `/tasks/${id}`,
@@ -53,6 +54,8 @@ function TaskForm(props) {
                 setProgress(task.progress)
                 setTags(task.tags)
             }).catch()
+        } else {
+            props.setTabValue(1)
         }
     }, [id])
 

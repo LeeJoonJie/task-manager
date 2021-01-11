@@ -11,26 +11,42 @@ import Toolbar from "@material-ui/core/Toolbar";
 
 const styles = {
     box: {
-        padding: 50
+        padding: 15
     }
 }
 
 class App extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {tabValue: 0}
+        this.setState = this.setState.bind(this)
+        this.setTabValue = this.setTabValue.bind(this)
+    }
+
+    setTabValue(newValue) {
+        this.setState({tabValue: newValue})
+    }
+
     render() {
 
-        const {classes} = this.props;
+        const {classes} = this.props
 
         return (
             <div>
-                <AppHeader />
+                <AppHeader tabValue={this.state.tabValue}
+                           setTabValue={this.setTabValue} />
                 <Toolbar id="back-to-top-anchor" />
                 <Box className={classes.box}>
                     <Switch>
-                        <Route exact path="/" component={HomePage}/>
-                        <Route exact path="/new" render={(props) => <TaskForm {...props} />}/>
-                        <Route exact path="/tasks/indiv/:id" component={TaskView}/>
-                        <Route exact path="/tasks/indiv/:id/edit" render={(props) => <TaskForm {...props} />}/>
+                        <Route exact path="/" render={(props) =>
+                            <HomePage setTabValue={this.setTabValue}/>}/>
+                        <Route exact path="/new" render={(props) =>
+                            <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
+                        <Route exact path="/tasks/indiv/:id" render={(props) =>
+                            <TaskView setTabValue={this.setTabValue}/>} />
+                        <Route exact path="/tasks/indiv/:id/edit" render={(props) =>
+                            <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
                         )} />
                     </Switch>
                 </Box>

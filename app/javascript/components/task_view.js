@@ -3,12 +3,13 @@ import axios from "axios"
 import {useHistory, useParams} from 'react-router-dom'
 import TaskCard from "./home_page/task_card"
 
-function TaskView(props) {
+const TaskView = (props) => {
     const [task, setTask] = useState(null)
     let {id} = useParams()
     let history = useHistory()
 
     useEffect(() => {
+        props.setTabValue(-1)
         axios({
             method: "GET",
             url: `/tasks/${id}`,
