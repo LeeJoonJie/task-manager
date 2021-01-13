@@ -31,6 +31,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: 20,
+        minWidth: '50%'
     },
     avatar: {
         background: 'whiteSmoke',

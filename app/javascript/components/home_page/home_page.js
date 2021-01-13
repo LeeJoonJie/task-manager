@@ -6,7 +6,9 @@ import TasksList from "./tasks_list"
 import DeleteAllButton from "./delete_all_button"
 import Grid from "@material-ui/core/Grid"
 import LayoutOptions from "./layout_options"
-import Typography from "@material-ui/core/Typography";
+import Typography from "@material-ui/core/Typography"
+import AddTaskButton from "./add_task_button"
+import {Paper} from "@material-ui/core"
 
 class HomePage extends React.Component {
 
@@ -46,7 +48,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <Grid container spacing={2} style={{margin: "0px 0px 20px 0px"}}>
+                <Grid container spacing={2} style={{margin: 0}} justify="center">
                     <Grid item>
                         <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
@@ -58,9 +60,22 @@ class HomePage extends React.Component {
                     </Grid>
 
                 </Grid>
-                <Typography>{`Found ${this.state.tasks.length} tasks!`}</Typography>
-                <DeleteAllButton getAllTasks={this.getAllTasks}/>
-                <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
+                <Grid container style={{margin: "150px 0px 20px 40px"}} justify="flex-start">
+                    <Grid item>
+                        <Typography variant='h5'>{`Found ${this.state.tasks.length} task(s)!`}</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    </Grid>
+                    <Grid item>
+                        <AddTaskButton/>
+                    </Grid>
+                    <Grid item >
+                        <DeleteAllButton getAllTasks={this.getAllTasks}/>
+                    </Grid>
+                </Grid>
+                <Paper variant="outlined" style={{padding: "25px 10px"}}>
+                    <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
+                </Paper>
 
             </div>
         )
