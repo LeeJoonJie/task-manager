@@ -100,7 +100,7 @@ const TaskForm = (props) => {
 
     return (
         <Paper className={classes.root} variant="outlined">
-            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)}>
+            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)} autocomplete="off">
                 <Grid container direction="column" spacing={3}>
                     <Grid item>
                         <h1>{is_editing ? 'Edit Task' : 'Add Task'}</h1>

@@ -1,11 +1,88 @@
 import React from 'react'
 import {WithContext as ReactTags} from 'react-tag-input'
-import './tagadder.css'
 import {useEffect, useState} from "react"
 import axios from "axios"
 import union from 'underscore/modules/union'
+import {makeStyles} from "@material-ui/core/styles";
 
 // Code adapted from https://github.com/prakhar1989/react-tags#placeholderOption
+
+const useStyles = makeStyles((theme) => ({
+        tags: {
+            position: 'relative'
+        },
+        tagInput: {
+            width: '50%',
+            borderRadius: '2px',
+            display: 'inline-block',
+            margin: '10px 0px'
+        },
+        tagInputField: {
+            height: '45px',
+            margin: 0,
+            fontSize: '15px',
+            width: '100%',
+            border: '1px solid #DCDCDC',
+            padding: '5px 20px',
+            '&:hover': {
+                border: '1px solid black'
+            }
+        },
+        selected: {
+            width: '60%'
+        },
+        tag: {
+            border: '1px solid #dddddd',
+            background: 'skyblue',
+            fontSize: '15px',
+            display: 'inline-block',
+            padding: '10px',
+            margin: '5px',
+            borderRadius: '2px',
+            '&:hover': {
+                border: '1px solid black'
+            },
+            '&:focus': {
+                border: '1px solid #0000CD',
+            },
+        },
+        remove: {
+            border: 'none',
+            cursor: 'pointer',
+            background: 'none'
+
+        },
+        suggestions: {
+            position: 'absolute',
+            '& ul': {
+                listStyleType: 'none',
+                boxShadow: '.05em .01em .5em rgba(0,0,0,.2)',
+                background: 'white',
+                width: '200px',
+                padding: 0
+            },
+            '& li': {
+                borderBottom: '1px solid #ddd',
+                padding: '5px 10px',
+                margin: 0
+            },
+            '& li mark': {
+                textDecoration: 'underline',
+                background: 'none',
+                fontWeight: 600,
+            },
+            '& ul li.ReactTags__activeSuggestion': {
+                background: '#b7cfe0',
+                cursor: 'pointer'
+            }
+        },
+        activeSuggestions: {
+            background: '#b7cfe0',
+            cursor: 'pointer'
+        }
+    }
+
+))
 
 const KeyCodes = {
     comma: 188,
@@ -17,6 +94,7 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter]
 const TagAdder = ({tags, setTags, setValue, register}) => {
 
     const [suggestions, setSuggestions] = useState([])
+    const classes = useStyles()
 
     // Get previously added tags from tasks and use them as suggestions
     useEffect(() => {
@@ -59,17 +137,29 @@ const TagAdder = ({tags, setTags, setValue, register}) => {
 
     return (
         <div>
-            <ReactTags tags={tagObjects}
-                       suggestions={suggestions}
-                       handleDelete={handleDelete}
-                       handleAddition={handleAddition}
-                       handleDrag={handleDrag}
-                       autofocus={false}
-                       delimiters={delimiters}
-                       placeholder="Tag"
-                       name="tags"
-                       inputFieldPosition="top"
-                       maxLength={20}
+            <ReactTags
+                classNames={{
+                    tags: classes.tags,
+                    tagInput: classes.tagInput,
+                    tagInputField: classes.tagInputField,
+                    selected: classes.selected,
+                    tag: classes.tag,
+                    remove: classes.remove,
+                    suggestions: classes.suggestions,
+                    activeSuggestion: classes.activeSuggestions
+                }}
+                tags={tagObjects}
+                suggestions={suggestions}
+                handleDelete={handleDelete}
+                allowDeleteFromEmptyInput={false}
+                handleAddition={handleAddition}
+                handleDrag={handleDrag}
+                autofocus={false}
+                delimiters={delimiters}
+                placeholder="Tag"
+                name="tags"
+                inputFieldPosition="top"
+                maxLength={20}
             />
         </div>
     )
