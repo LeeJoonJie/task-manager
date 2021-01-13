@@ -17,11 +17,11 @@ const DeleteAllButton = (props) => {
         <div>
             <Tooltip title="Delete All Tasks">
                 <Button
+                    style={{margin: "0px 20px"}}
                     variant="outlined"
                     color="secondary"
                     size="large"
                     type="delete"
-                    style={{margin: 20}}
                     startIcon={<DeleteForever/>}
                     onClick={() => setDeleteAllOpen(true)}
                 >
