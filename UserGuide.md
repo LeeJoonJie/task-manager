@@ -15,7 +15,7 @@ Hello there! If you are reading this, you must be curious about *Task Manager*.
 
 ## **2. Quick Start**
 
-1. Go to https://dry-depths-11934.herokuapp.com/. You should see something like the picture below.
+1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). You should see something like the picture below.
 2. The card-like boxes that you see are tasks. These tasks that are already present are sample data loaded for you to play with.
 3. To add your own task, press the Add button. Fill in the relevant information in the form that shows and submit. The task title is the only compulsory field. 
 4. To edit a task, click the Edit icon and update the form.
