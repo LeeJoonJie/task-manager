@@ -14,7 +14,8 @@ const styles = {
         padding: '0px 30px 0px 30px'
     },
     toolbar: {
-        height: 0,
+        minHeight: 0,
+        height: 10,
         margin: 0,
         padding: 0,
     }

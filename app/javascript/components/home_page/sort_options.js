@@ -1,17 +1,14 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 import ButtonGroup from "@material-ui/core/ButtonGroup"
-import ClickAwayListener from "@material-ui/core/ClickAwayListener"
-import Paper from "@material-ui/core/Paper"
-import Popper from "@material-ui/core/Popper"
 import MenuItem from "@material-ui/core/MenuItem"
-import MenuList from "@material-ui/core/MenuList"
-import {TrendingDown, TrendingUp, Menu} from "@material-ui/icons"
+import {TrendingDown, TrendingUp} from "@material-ui/icons"
 import Box from "@material-ui/core/Box"
 import FormLabel from '@material-ui/core/FormLabel'
 import Col from "react-bootstrap/Col"
 import {makeStyles} from "@material-ui/core/styles"
-import MenuIcon from "@material-ui/icons/Menu"
+import Fade from "@material-ui/core/Fade"
+import Menu from "@material-ui/core/Menu"
 
 // Code adapted from https://material-ui.com/components/button-group/
 
@@ -22,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
         height: 40
     },
     label: {
-        margin: 7,
+        margin: '7px 7px 7px 10px',
         color: 'black'
     },
     fieldButton: {
         margin: 0,
-        width: 170,
+        width: 140,
+        padding: 0,
         leftMargin: 0,
-        background: 'linear-gradient(45deg, #21a9f3 30%, #21CBF3 90%)'
     },
     orderButtonDesc: {
         margin: 0,
@@ -53,9 +50,9 @@ const fieldMap = new Map([
 
 const SortOptions = (props) => {
 
-    const [fieldOpen, setFieldOpen] = React.useState(false)
-    const anchorRef = React.useRef(null)
+    const [anchorEl, setAnchorEl] = React.useState(null)
     const classes = useStyles()
+    const open = Boolean(anchorEl)
 
     const handleOrderChange = (event) => {
         props.setState(
@@ -63,23 +60,18 @@ const SortOptions = (props) => {
             props.getAllTasks)
     }
 
-    const handleFieldChange = (event, index) => {
-        setFieldOpen(false)
-        props.setState(
-            {sortField: fieldValues[index]},
+    const handleOpenMenu = (event) => {
+        setAnchorEl(event.target)
+    }
+
+    const handleCloseMenu = () => {
+        setAnchorEl(null)
+    }
+
+    const handleSortField = (event) => {
+        setAnchorEl(null)
+        props.setState({sortField: event.target.getAttribute("name")},
             props.getAllTasks)
-    }
-
-    const handleFieldToggle = () => {
-        setFieldOpen((prevOpen) => !prevOpen);
-    }
-
-    const handleFieldClose = (event) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-
-        setFieldOpen(false);
     }
 
     return (
@@ -88,18 +80,42 @@ const SortOptions = (props) => {
                 <FormLabel className={classes.label}>Sort by</FormLabel>
                 <ButtonGroup
                     variant="contained"
-                    ref={anchorRef}
                     aria-label="split button"
                     className={classes.buttons}
                 >
                     <Button
                         size="large"
-                        startIcon={<MenuIcon/>}
-                        onClick={handleFieldToggle}
+                        onClick={handleOpenMenu}
                         className={classes.fieldButton}
+                        color="primary"
+                        variant="contained"
                     >
                         {fieldMap.get(props.state.sortField)}
                     </Button>
+                    <Menu
+                        id="fade-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={open}
+                        onClick={handleCloseMenu}
+                        TransitionComponent={Fade}
+                        getContentAnchorEl={null}
+                        anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                        transformOrigin={{vertical: "top", horizontal: "center"}}
+                    >
+                        {fieldValues.map(value => (
+                            <MenuItem
+                                key={value}
+                                name={value}
+                                selected={props.state.sortField === value}
+                                onClick={handleSortField}
+                            >
+                                {fieldMap.get(value)}
+                            </MenuItem>
+                        ))}
+
+                    </Menu>
+
                     <Button
                         className={props.state.sortOrder === "desc"
                             ? classes.orderButtonDesc
@@ -112,38 +128,6 @@ const SortOptions = (props) => {
                         {props.state.sortOrder === "desc" ? "Desc" : "Asc"}
                     </Button>
                 </ButtonGroup>
-                <Popper
-                    open={fieldOpen}
-                    anchorEl={anchorRef.current}
-                    role={undefined}
-                    transition
-                    disablePortal
-                    placement="bottom-start"
-                    modifiers={{
-                        offset: {
-                            enabled: true,
-                            offset: 35
-                        }
-                    }}
-                >
-
-                    <Paper>
-                        <ClickAwayListener onClickAway={handleFieldClose}>
-                            <MenuList id="split-button-menu">
-                                {fieldValues.map((option, index) => (
-                                    <MenuItem
-                                        key={option}
-                                        selected={option === props.state.sortField}
-                                        onClick={(event) => handleFieldChange(event, index)}
-                                    >
-                                        {fieldMap.get(option)}
-                                    </MenuItem>
-                                ))}
-                            </MenuList>
-                        </ClickAwayListener>
-                    </Paper>
-
-                </Popper>
             </Col>
         </Box>
     )

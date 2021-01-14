@@ -9,16 +9,15 @@ import Tooltip from "@material-ui/core/Tooltip"
 import {useHistory} from "react-router-dom"
 import {Link} from "react-router-dom"
 import {Tab, Tabs} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        color: "cornflowerblue"
+        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
     },
     title: {
-        color: "white"
-    },
-    grow: {
-        flexGrow: 1,
+        color: "white",
+        margin: "25px 0px 0px 0px"
     },
     button: {
         color: 'white'
@@ -33,9 +32,12 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'inherit'
         }
     },
-    tabs: {
-        color: 'white'
+    tab: {
+        color: 'white',
     },
+    selectedTab: {
+        color: 'darkOrange'
+    }
 
 }))
 
@@ -61,29 +63,37 @@ const AppHeader = (props) => {
 
         <AppBar position="sticky" className={classes.root}>
             <Toolbar>
-                <Link to="/" className={classes.link}>
-                    <Typography variant="h6" noWrap className={classes.title}>
-                        Task Manager
-                    </Typography>
-                </Link>
+                <Grid container justify="space-between">
+                    <Grid item xs={2}>
+                        <Link to="/" className={classes.link}>
+                            <Typography variant="h5" noWrap className={classes.title}>
+                                Task Manager
+                            </Typography>
+                        </Link>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Tabs
+                            value={props.tabValue}
+                            onChange={handleTabChange}
+                        >
+                            <Tooltip title="Home">
+                                <Tab label="Home"
+                                     className={props.tabValue === 0 ? classes.selectedTab : classes.tab}
+                                     icon={<HomeIcon/>}/>
+                            </Tooltip>
+                            <Tooltip title="Add Task">
+                                <Tab label="Add Task"
+                                     className={props.tabValue === 1 ? classes.selectedTab : classes.tab}
+                                     icon={<AddIcon/>}/>
+                            </Tooltip>
+                        </Tabs>
+                    </Grid>
+                    <Grid item xs={2}>
+                    </Grid>
 
-                <div className={classes.grow}/>
-                <Tabs
-                    value={props.tabValue}
-                    className={classes.tabs}
-                    onChange={handleTabChange}
-                    variant="scrollable"
-                    scrollButtons="on"
-                >
-                    <Tooltip title="Home">
-                        <Tab label="Home" icon={<HomeIcon/>}/>
-                    </Tooltip>
-                    <Tooltip title="Add Task">
-                        <Tab label="Add Task" icon={<AddIcon/>}/>
-                    </Tooltip>
-                </Tabs>
-
+                </Grid>
             </Toolbar>
+
         </AppBar>
 
     )
