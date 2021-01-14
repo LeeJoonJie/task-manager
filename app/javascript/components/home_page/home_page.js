@@ -60,11 +60,11 @@ class HomePage extends React.Component {
                     </Grid>
 
                 </Grid>
-                <Grid container style={{margin: "150px 0px 20px 40px"}} justify="flex-start">
+                <Grid container style={{margin: "30px 40px 20px 20px", padding: 0}} justify="flex-start">
                     <Grid item>
                         <Typography variant='h5'>{`Found ${this.state.tasks.length} task(s)!`}</Typography>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item style={{flexGrow: 1}}>
                     </Grid>
                     <Grid item>
                         <AddTaskButton/>
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
                         <DeleteAllButton getAllTasks={this.getAllTasks}/>
                     </Grid>
                 </Grid>
-                <Paper variant="outlined" style={{padding: "25px 10px"}}>
+                <Paper variant="outlined" style={{padding: "25px 10px", minHeight: "50vh"}}>
                     <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
                 </Paper>
 

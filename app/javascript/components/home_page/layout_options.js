@@ -3,56 +3,45 @@ import Box from "@material-ui/core/Box"
 import Col from "react-bootstrap/Col"
 import FormLabel from "@material-ui/core/FormLabel"
 import Button from "@material-ui/core/Button"
-import MenuIcon from "@material-ui/icons/Menu"
-import Popper from "@material-ui/core/Popper"
-import Paper from "@material-ui/core/Paper"
-import ClickAwayListener from "@material-ui/core/ClickAwayListener"
-import MenuList from "@material-ui/core/MenuList"
 import MenuItem from "@material-ui/core/MenuItem"
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles"
+import Menu from "@material-ui/core/Menu"
+import Fade from "@material-ui/core/Fade"
 
 const optionValues = ['List', 'Grid 2/row', 'Grid 3/row', 'Grid 4/row']
 
 const useStyles = makeStyles((theme) => ({
 
     button: {
-        margin: '2px 10px 10px 10px',
-        height: 40
+        margin: '1px 10px 10px 10px',
+        height: 40,
+        width: 150
     },
     label: {
-        margin: '7px 7px 9px 7px',
+        margin: '7px 7px 8px 10px',
         color: 'black'
-    },
-    optionButton: {
-        width: 180,
-        leftMargin: 0,
-        background: 'linear-gradient(45deg, #f8b500 30%, #fceabb 90%)'
     },
 }))
 
 const LayoutOptions = (props) => {
 
-    const [optionsOpen, setOptionsOpen] = React.useState(false)
-    const anchorRef = React.useRef(null)
+    const [anchorEl, setAnchorEl] = React.useState(null)
+    const open = Boolean(anchorEl)
     const classes = useStyles()
 
-    const handleOptionChange = (event, index) => {
-        setOptionsOpen(false)
-        props.setState(
-            {layout: optionValues[index]},
+    const handleOpenMenu = (event) => {
+        setAnchorEl(event.target)
+    }
+
+    const handleCloseMenu = () => {
+        setAnchorEl(null)
+    }
+
+    const handleLayoutChange = (event) => {
+        setAnchorEl(null)
+        props.setState({layout: event.target.getAttribute("name")},
             props.getAllTasks)
-    }
 
-    const handleOptionToggle = () => {
-        setOptionsOpen((prevOpen) => !prevOpen);
-    }
-
-    const handleOptionClose = (event) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-
-        setOptionsOpen(false);
     }
 
     return (
@@ -60,46 +49,38 @@ const LayoutOptions = (props) => {
             <Col md={8}>
                 <FormLabel className={classes.label}>Layout</FormLabel>
                 <Button
+                    variant="contained"
                     className={classes.button}
-                    ref={anchorRef}
                     size="large"
-                    startIcon={<MenuIcon/>}
-                    onClick={handleOptionToggle}
-                    className={classes.optionButton}
+                    color="primary"
+                    onClick={handleOpenMenu}
                 >
                     {props.state.layout}
                 </Button>
-                <Popper
-                    open={optionsOpen}
-                    anchorEl={anchorRef.current}
-                    role={undefined}
-                    transition
-                    disablePortal
-                    placement="bottom-start"
-                    modifiers={{
-                        offset: {
-                            enabled: true,
-                            offset: 35
-                        }
-                    }}
+                <Menu
+                    id="fade-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={open}
+                    onClick={handleCloseMenu}
+                    TransitionComponent={Fade}
+                    getContentAnchorEl={null}
+                    anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                    transformOrigin={{vertical: "top", horizontal: "center"}}
                 >
-                    <Paper>
-                        <ClickAwayListener onClickAway={handleOptionClose}>
-                            <MenuList id="split-button-menu">
-                                {optionValues.map((option, index) => (
-                                    <MenuItem
-                                        key={option}
-                                        selected={option === props.state.layout}
-                                        onClick={(event) => handleOptionChange(event, index)}
-                                    >
-                                        {option}
-                                    </MenuItem>
-                                ))}
-                            </MenuList>
-                        </ClickAwayListener>
-                    </Paper>
+                    {optionValues.map(value => (
+                        <MenuItem
+                            key={value}
+                            name={value}
+                            selected={props.state.layout === value}
+                            onClick={handleLayoutChange}
+                        >
+                            {value}
+                        </MenuItem>
+                    ))}
 
-                </Popper>
+                </Menu>
+
             </Col>
         </Box>
     )
