@@ -13,7 +13,7 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
+        backgroundColor: '#25282c'
     },
     title: {
         color: "white",
@@ -34,9 +34,19 @@ const useStyles = makeStyles((theme) => ({
     },
     tab: {
         color: 'white',
+        "&:hover": {
+            backgroundColor: 'grey',
+        }
     },
     selectedTab: {
-        color: 'darkOrange'
+        color: '#FF6700',
+        "&:hover": {
+            backgroundColor: 'grey',
+        }
+    },
+    indicator: {
+        height: 4,
+        color: '#FF6700'
     }
 
 }))
@@ -73,18 +83,20 @@ const AppHeader = (props) => {
                     </Grid>
                     <Grid item xs={4}>
                         <Tabs
+                            centered
                             value={props.tabValue}
                             onChange={handleTabChange}
+                            classes={{indicator: classes.indicator}}
                         >
                             <Tooltip title="Home">
                                 <Tab label="Home"
                                      className={props.tabValue === 0 ? classes.selectedTab : classes.tab}
-                                     icon={<HomeIcon/>}/>
+                                     icon={<HomeIcon fontSize="large"/>}/>
                             </Tooltip>
                             <Tooltip title="Add Task">
                                 <Tab label="Add Task"
                                      className={props.tabValue === 1 ? classes.selectedTab : classes.tab}
-                                     icon={<AddIcon/>}/>
+                                     icon={<AddIcon fontSize="large"/>}/>
                             </Tooltip>
                         </Tabs>
                     </Grid>

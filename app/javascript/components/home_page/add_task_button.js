@@ -11,8 +11,8 @@ const AddTaskButton = (props) => {
             <Tooltip title="Add Task">
                 <Button
                     variant="outlined"
+                    size="medium"
                     color="primary"
-                    size="large"
                     type="add"
                     startIcon={<Add/>}
                     onClick={() => {

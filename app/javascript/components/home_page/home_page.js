@@ -9,6 +9,7 @@ import LayoutOptions from "./layout_options"
 import Typography from "@material-ui/core/Typography"
 import AddTaskButton from "./add_task_button"
 import {Paper} from "@material-ui/core"
+import Box from "@material-ui/core/Box";
 
 class HomePage extends React.Component {
 
@@ -48,10 +49,15 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <Grid container spacing={2} style={{margin: 0}} justify="center">
+                <Box display="flex" justifyContent="center">
+                    <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
+                </Box>
+
+                <Grid container style={{margin: "30px 40px 20px 20px", padding: 0}} spacing={1} alignItems="flex-end" >
                     <Grid item>
-                        <SearchBar state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
+                        <Typography variant='h5'>{`Found ${this.state.tasks.length} task(s)`}</Typography>
                     </Grid>
+
                     <Grid item>
                         <SortOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
@@ -59,17 +65,12 @@ class HomePage extends React.Component {
                         <LayoutOptions state={this.state} setState={this.setState} getAllTasks={this.getAllTasks}/>
                     </Grid>
 
-                </Grid>
-                <Grid container style={{margin: "30px 40px 20px 20px", padding: 0}} justify="flex-start">
-                    <Grid item>
-                        <Typography variant='h5'>{`Found ${this.state.tasks.length} task(s)!`}</Typography>
-                    </Grid>
                     <Grid item style={{flexGrow: 1}}>
                     </Grid>
                     <Grid item>
                         <AddTaskButton/>
                     </Grid>
-                    <Grid item >
+                    <Grid item>
                         <DeleteAllButton getAllTasks={this.getAllTasks}/>
                     </Grid>
                 </Grid>

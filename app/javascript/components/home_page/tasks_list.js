@@ -27,7 +27,7 @@ const TasksList = (props) => {
         return (
             <div>
                 {props.state.tasks.map((task, index) => (
-                    <Grid container direction="row" justify="center" spacing={1}>
+                    <Grid container key={task.id} direction="row" justify="center" spacing={1}>
                         <Grid item key={task.id} xs={6}>
                             <TaskCard key={task.id} task={task} index={index} actionAfterDelete={props.getAllTasks}/>
                         </Grid>

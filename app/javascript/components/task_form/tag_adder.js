@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
             }
         },
         selected: {
-            width: '60%'
+            width: '100%'
         },
         tag: {
             border: '1px solid #dddddd',
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '15px',
             display: 'inline-block',
             padding: '10px',
-            margin: '5px',
+            margin: '5px 10px 5px 0px',
             borderRadius: '2px',
             '&:hover': {
                 border: '1px solid black'

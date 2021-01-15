@@ -4,7 +4,7 @@ import React from "react"
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '50%',
+        width: '60%',
         padding: 20,
         '&:hover': {
             borderColor: 'black'

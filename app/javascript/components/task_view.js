@@ -3,10 +3,14 @@ import axios from "axios"
 import {useHistory, useParams} from 'react-router-dom'
 import TaskCard from "./home_page/task_card"
 import {makeStyles} from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '50%'
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'Center',
+        marginTop: 100
     }
 }))
 
@@ -32,9 +36,9 @@ const TaskView = (props) => {
 
     return (
         task &&
-        <div className={classes.root}>
+        <Box className={classes.root}>
             <TaskCard task={task} index={null} actionAfterDelete={returnToHome}/>
-        </div>
+        </Box>
     )
 
 }

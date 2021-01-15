@@ -17,9 +17,13 @@ import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    paper: {
         padding: 50,
         margin: 30,
-        width: '60%'
+        width: '50%'
 
     },
 }))
@@ -71,7 +75,6 @@ const TaskForm = (props) => {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
-        console.log(data.priority)
         axios({
             method: method,
             url: url,
@@ -99,8 +102,9 @@ const TaskForm = (props) => {
     }
 
     return (
-        <Paper className={classes.root} variant="outlined">
-            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)} autocomplete="off">
+        <Box className={classes.root}>
+        <Paper className={classes.paper} variant="outlined">
+            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
                 <Grid container direction="column" spacing={3}>
                     <Grid item>
                         <h1>{is_editing ? 'Edit Task' : 'Add Task'}</h1>
@@ -151,6 +155,7 @@ const TaskForm = (props) => {
 
             </form>
         </Paper>
+        </Box>
     )
 }
 
