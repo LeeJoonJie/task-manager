@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         height: 35,
     },
     label: {
-        margin: '7px 7px 4px 50px',
+        margin: '7px 7px 4px 55px',
         color: 'black',
         fontSize: 14
     },
@@ -109,7 +109,7 @@ const SortOptions = (props) => {
     return (
         <Box>
             <Col md={8}>
-                <FormLabel className={classes.label}>Sort by</FormLabel>
+                <FormLabel className={classes.label}>Sort</FormLabel>
                 <ButtonGroup
                     aria-label="split button"
                     className={classes.buttons}

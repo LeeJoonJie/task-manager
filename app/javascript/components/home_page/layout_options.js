@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
     },
     label: {
-        margin: '7px 7px 5px 10px',
+        margin: '7px 7px 5px 15px',
         color: 'black',
         fontSize: 14
     },
