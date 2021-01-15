@@ -15,27 +15,30 @@ import Menu from "@material-ui/core/Menu"
 const useStyles = makeStyles((theme) => ({
 
     buttons: {
-        margin: '2px 10px 10px 10px',
-        height: 40
+        margin: '2px 10px 0px 50px',
+        height: 35,
     },
     label: {
-        margin: '7px 7px 7px 10px',
-        color: 'black'
+        margin: '7px 7px 4px 55px',
+        color: 'black',
+        fontSize: 14
     },
     fieldButton: {
         margin: 0,
-        width: 140,
+        width: 120,
         padding: 0,
         leftMargin: 0,
+        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)',
+        color: 'white'
     },
     orderButtonDesc: {
         margin: 0,
-        width: 90,
+        width: 80,
         background: 'linear-gradient(315deg, #f2cf07 0%, #55d284 74%)'
     },
     orderButtonAsc: {
         margin: 0,
-        width: 90,
+        width: 80,
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
     }
 }))
@@ -74,60 +77,65 @@ const SortOptions = (props) => {
             props.getAllTasks)
     }
 
+    const fieldMenu = () => {
+        return (
+            <Menu
+                id="fade-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={open}
+                onClick={handleCloseMenu}
+                TransitionComponent={Fade}
+                getContentAnchorEl={null}
+                anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                transformOrigin={{vertical: "top", horizontal: "center"}}
+            >
+                {fieldValues.map(value => (
+                    <MenuItem
+                        key={value}
+                        name={value}
+                        selected={props.state.sortField === value}
+                        onClick={handleSortField}
+                    >
+                        {fieldMap.get(value)}
+                    </MenuItem>
+                ))}
+
+            </Menu>
+        )
+
+    }
+
     return (
         <Box>
             <Col md={8}>
-                <FormLabel className={classes.label}>Sort by</FormLabel>
+                <FormLabel className={classes.label}>Sort</FormLabel>
                 <ButtonGroup
-                    variant="contained"
                     aria-label="split button"
                     className={classes.buttons}
                 >
                     <Button
-                        size="large"
+                        size="small"
                         onClick={handleOpenMenu}
                         className={classes.fieldButton}
-                        color="primary"
                         variant="contained"
                     >
                         {fieldMap.get(props.state.sortField)}
                     </Button>
-                    <Menu
-                        id="fade-menu"
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={open}
-                        onClick={handleCloseMenu}
-                        TransitionComponent={Fade}
-                        getContentAnchorEl={null}
-                        anchorOrigin={{vertical: "bottom", horizontal: "center"}}
-                        transformOrigin={{vertical: "top", horizontal: "center"}}
-                    >
-                        {fieldValues.map(value => (
-                            <MenuItem
-                                key={value}
-                                name={value}
-                                selected={props.state.sortField === value}
-                                onClick={handleSortField}
-                            >
-                                {fieldMap.get(value)}
-                            </MenuItem>
-                        ))}
-
-                    </Menu>
-
                     <Button
                         className={props.state.sortOrder === "desc"
                             ? classes.orderButtonDesc
                             : classes.orderButtonAsc}
+
+                        size="small"
                         variant="contained"
-                        size="large"
                         startIcon={props.state.sortOrder === "desc" ? <TrendingDown/> : <TrendingUp/>}
                         onClick={handleOrderChange}
                     >
                         {props.state.sortOrder === "desc" ? "Desc" : "Asc"}
                     </Button>
                 </ButtonGroup>
+                {fieldMenu()}
             </Col>
         </Box>
     )

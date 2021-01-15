@@ -5,19 +5,20 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import HomeIcon from "@material-ui/icons/Home"
 import AddIcon from "@material-ui/icons/Add"
+import InfoIcon from "@material-ui/icons/Info"
 import Tooltip from "@material-ui/core/Tooltip"
 import {useHistory} from "react-router-dom"
 import {Link} from "react-router-dom"
-import {Tab, Tabs} from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
+import {Tab, Tabs} from "@material-ui/core"
+import Grid from "@material-ui/core/Grid"
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
+        backgroundColor: '#25282c'
     },
     title: {
-        color: "white",
-        margin: "25px 0px 0px 0px"
+        color: 'orange',
+        margin: '15px 0px'
     },
     button: {
         color: 'white'
@@ -34,9 +35,21 @@ const useStyles = makeStyles((theme) => ({
     },
     tab: {
         color: 'white',
+        minHeight: 65,
+        "&:hover": {
+            backgroundColor: 'grey',
+        }
     },
     selectedTab: {
-        color: 'darkOrange'
+        color: '#FF6700',
+        minHeight: 65,
+        "&:hover": {
+            backgroundColor: 'grey',
+        }
+    },
+    indicator: {
+        height: 4,
+        color: '#FF6700'
     }
 
 }))
@@ -51,6 +64,8 @@ const AppHeader = (props) => {
                 return history.push('/')
             case 1:
                 return history.push('/new')
+            case 2:
+                return history.push('/about')
             case -1:
                 props.setTabValue(-1)
                 return
@@ -71,20 +86,28 @@ const AppHeader = (props) => {
                             </Typography>
                         </Link>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={6}>
                         <Tabs
+                            centered
                             value={props.tabValue}
                             onChange={handleTabChange}
+                            classes={{indicator: classes.indicator}}
+
                         >
                             <Tooltip title="Home">
-                                <Tab label="Home"
-                                     className={props.tabValue === 0 ? classes.selectedTab : classes.tab}
-                                     icon={<HomeIcon/>}/>
+                                <Tab
+                                    className={props.tabValue === 0 ? classes.selectedTab : classes.tab}
+                                    icon={<HomeIcon fontSize="large"/>}/>
                             </Tooltip>
                             <Tooltip title="Add Task">
-                                <Tab label="Add Task"
-                                     className={props.tabValue === 1 ? classes.selectedTab : classes.tab}
-                                     icon={<AddIcon/>}/>
+                                <Tab
+                                    className={props.tabValue === 1 ? classes.selectedTab : classes.tab}
+                                    icon={<AddIcon fontSize="large"/>}/>
+                            </Tooltip>
+                            <Tooltip title="About">
+                                <Tab
+                                    className={props.tabValue === 2 ? classes.selectedTab : classes.tab}
+                                    icon={<InfoIcon fontSize="large"/>}/>
                             </Tooltip>
                         </Tabs>
                     </Grid>

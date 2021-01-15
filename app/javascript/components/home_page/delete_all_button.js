@@ -20,7 +20,7 @@ const DeleteAllButton = (props) => {
                     style={{margin: "0px 20px"}}
                     variant="outlined"
                     color="secondary"
-                    size="large"
+                    size="medium"
                     type="delete"
                     startIcon={<DeleteForever/>}
                     onClick={() => setDeleteAllOpen(true)}

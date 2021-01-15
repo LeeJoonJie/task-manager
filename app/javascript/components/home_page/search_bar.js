@@ -10,19 +10,16 @@ import MenuItem from "@material-ui/core/MenuItem"
 import Fade from "@material-ui/core/Fade"
 import Divider from "@material-ui/core/Divider"
 import Button from "@material-ui/core/Button"
-import Box from "@material-ui/core/Box"
 
 // Code adapted from https://material-ui.com/components/text-fields/?
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        margin: 15
 
-    },
     searchBox: {
         padding: '2px 4px',
-        width: 500,
+        width: '50%',
         display: 'flex',
+        margin: 20
     },
     input: {
         marginLeft: theme.spacing(3),
@@ -86,69 +83,67 @@ const SearchBar = (props) => {
     }
 
     return (
-        <Box className={classes.root}>
-            <Paper component="form" elevation={3} className={classes.searchBox}>
-                <IconButton
-                    className={classes.menuButton}
-                    color="primary"
-                    size="medium"
-                    onClick={handleClickMenu}
-                >
-                    <MenuIcon/>
-                </IconButton>
-                <Button
-                    className={classes.fieldButton}
-                    color="primary"
-                    size="medium"
-                    onClick={handleClickMenu}
+        <Paper component="form" elevation={3} className={classes.searchBox}>
+            <IconButton
+                className={classes.menuButton}
+                color="primary"
+                size="medium"
+                onClick={handleClickMenu}
+            >
+                <MenuIcon/>
+            </IconButton>
+            <Button
+                className={classes.fieldButton}
+                color="primary"
+                size="medium"
+                onClick={handleClickMenu}
 
-                >
-                    {fieldMap.get(props.state.searchField)}
-                </Button>
-                <Menu
-                    id="fade-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={open}
-                    onClick={handleCloseMenu}
-                    TransitionComponent={Fade}
-                    getContentAnchorEl={null}
-                    anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                    transformOrigin={{ vertical: "top", horizontal: "center" }}
-                >
-                    {fieldValues.map(value => (
-                        <MenuItem
-                            key={value}
-                            name={value}
-                            selected={props.state.searchField === value}
-                            onClick={handleSearchField}
-                        >
-                            {fieldMap.get(value)}
-                        </MenuItem>
-                    ))}
+            >
+                {fieldMap.get(props.state.searchField)}
+            </Button>
+            <Menu
+                id="fade-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={open}
+                onClick={handleCloseMenu}
+                TransitionComponent={Fade}
+                getContentAnchorEl={null}
+                anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+                transformOrigin={{vertical: "top", horizontal: "center"}}
+            >
+                {fieldValues.map(value => (
+                    <MenuItem
+                        key={value}
+                        name={value}
+                        selected={props.state.searchField === value}
+                        onClick={handleSearchField}
+                    >
+                        {fieldMap.get(value)}
+                    </MenuItem>
+                ))}
 
-                </Menu>
-                <Divider className={classes.divider} orientation="vertical"/>
+            </Menu>
+            <Divider className={classes.divider} orientation="vertical"/>
 
-                <InputBase
-                    className={classes.input}
-                    placeholder="Search"
-                    inputProps={{"aria-label": "search"}}
-                    onChange={(event) => setSearchString(event.target.value)}
-                />
-                <IconButton
-                    type="submit"
-                    className={classes.searchButton}
-                    aria-label="search"
-                    onClick={(event) => {
-                        event.preventDefault()
-                        props.setState({searchString: searchString}, props.getAllTasks)
-                    }}
-                >
-                    <SearchIcon/>
-                </IconButton>
-            </Paper>
-        </Box>
+            <InputBase
+                className={classes.input}
+                placeholder="Search"
+                inputProps={{"aria-label": "search"}}
+                onChange={(event) => setSearchString(event.target.value)}
+            />
+            <IconButton
+                type="submit"
+                className={classes.searchButton}
+                aria-label="search"
+                onClick={(event) => {
+                    event.preventDefault()
+                    props.setState({searchString: searchString}, props.getAllTasks)
+                }}
+            >
+                <SearchIcon/>
+            </IconButton>
+        </Paper>
     )
 }
 

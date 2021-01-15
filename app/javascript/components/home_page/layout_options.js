@@ -13,13 +13,16 @@ const optionValues = ['List', 'Grid 2/row', 'Grid 3/row', 'Grid 4/row']
 const useStyles = makeStyles((theme) => ({
 
     button: {
-        margin: '1px 10px 10px 10px',
-        height: 40,
-        width: 150
+        margin: '1px 10px 0px 10px',
+        height: 35,
+        width: 140,
+        color: 'white',
+        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
     },
     label: {
-        margin: '7px 7px 8px 10px',
-        color: 'black'
+        margin: '7px 7px 5px 15px',
+        color: 'black',
+        fontSize: 14
     },
 }))
 
@@ -51,8 +54,7 @@ const LayoutOptions = (props) => {
                 <Button
                     variant="contained"
                     className={classes.button}
-                    size="large"
-                    color="primary"
+                    size="small"
                     onClick={handleOpenMenu}
                 >
                     {props.state.layout}

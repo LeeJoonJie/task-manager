@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
             }
     },
     textField: {
-        width: '50%',
+        width: '60%',
     },
 
 }))
