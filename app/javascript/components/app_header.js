@@ -18,7 +18,10 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         color: 'orange',
-        margin: '15px 0px'
+        margin: '10px 0px',
+        fontWeight: 900,
+        fontFamily: 'monospace',
+        fontSize: '2rem'
     },
     button: {
         color: 'white'
@@ -79,7 +82,7 @@ const AppHeader = (props) => {
         <AppBar position="sticky" className={classes.root}>
             <Toolbar>
                 <Grid container justify="space-between">
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                         <Link to="/" className={classes.link}>
                             <Typography variant="h5" noWrap className={classes.title}>
                                 Task Manager
@@ -111,7 +114,7 @@ const AppHeader = (props) => {
                             </Tooltip>
                         </Tabs>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                     </Grid>
 
                 </Grid>
