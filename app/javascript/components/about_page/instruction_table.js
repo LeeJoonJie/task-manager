@@ -35,22 +35,24 @@ function createData(action, instruction) {
 }
 
 const rows = [
-    createData('View tasks',
-        'Click the \'Home\' tab in the website header to view tasks in the Homepage.'),
+    createData('View all tasks',
+        'Click the \'Home\' tab in the website header to view tasks in the Homepage'),
+    createData('View a task',
+        'Click the header of the task card'),
     createData('Add new task',
         'Click the \'Add Task\' tab in the website header or the \'Add Task\' button in the Homepage.'),
     createData('Delete a task',
-        'Click the \'Delete\' icon at the bottom right of the task card.'),
+        'Click the \'Delete\' icon at the bottom right of the task card'),
     createData('Edit a task',
-        'Click the \'Edit\' icon at the bottom right of the task card.'),
+        'Click the \'Edit\' icon at the bottom right of the task card'),
     createData('Delete all tasks',
-        'Click the \'Delete all\' button in the Homepage.'),
+        'Click the \'Delete all\' button in the Homepage'),
     createData('Sort tasks',
-        'Click the \'Sort\' button in the Homepage.'),
+        'Click the \'Sort\' button in the Homepage'),
     createData('Search tasks',
-        'Use the search box in the Homepage.'),
+        'Use the search box in the Homepage'),
     createData('Change layout',
-        'Click the \'Layout\' button in the Homepage.')
+        'Click the \'Layout\' button in the Homepage')
 ]
 
 const useStyles = makeStyles({

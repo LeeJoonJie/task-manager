@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 50,
         margin: 80,
         width: '50%'
-
-    },
+    }
 }))
 
 const TaskForm = (props) => {
@@ -86,7 +85,7 @@ const TaskForm = (props) => {
 
     function SubmitButton() {
         return (
-            <Box textAlign='center' style={{margin:20}}>
+            <Box textAlign='center' style={{margin: 20}}>
                 <Button
                     variant="contained"
                     color="primary"
@@ -103,58 +102,58 @@ const TaskForm = (props) => {
 
     return (
         <Box className={classes.root}>
-        <Paper className={classes.paper} variant="outlined">
-            <form className="TaskForm" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-                <Grid container direction="column" spacing={3}>
-                    <Grid item>
-                        <h1>{is_editing ? 'Edit Task' : 'Add Task'}</h1>
+            <Paper className={classes.paper} variant="outlined">
+                <form className="TaskForm" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+                    <Grid container direction="column" spacing={3}>
+                        <Grid item>
+                            <h1>{is_editing ? 'Edit Task' : 'Add Task'}</h1>
+                        </Grid>
+
+                        <Grid item>
+                            {TitleTextField({
+                                title: title, setTitle: setTitle,
+                                errors: errors, register: register
+                            })}
+                        </Grid>
+
+                        <Grid item>
+                            {DescriptionTextField({
+                                description: description, setDescription: setDescription,
+                                register: register
+                            })}
+                        </Grid>
+
+                        <Grid item>
+                            {PrioritySelect({
+                                priority: priority, setPriority: setPriority,
+                                setValue: setValue, register: register
+                            })}
+                        </Grid>
+                        <Grid item>
+                            {DeadlineDatePicker({
+                                deadline: deadline, setDeadline: setDeadline,
+                                setValue: setValue, register: register()
+                            })}
+                        </Grid>
+                        <Grid item>
+                            {ProgressSlider({
+                                progress: progress, setProgress: setProgress,
+                                setValue: setValue, register: register
+                            })}
+                        </Grid>
+                        <Grid item>
+                            {TagAdder({
+                                tags: tags, setTags: setTags,
+                                setValue: setValue, register: register
+                            })}
+                        </Grid>
+                        <Grid item>
+                            {SubmitButton()}
+                        </Grid>
                     </Grid>
 
-                    <Grid item>
-                        {TitleTextField({
-                            title: title, setTitle: setTitle,
-                            errors: errors, register: register
-                        })}
-                    </Grid>
-
-                    <Grid item>
-                        {DescriptionTextField({
-                            description: description, setDescription: setDescription,
-                            register: register
-                        })}
-                    </Grid>
-
-                    <Grid item>
-                        {PrioritySelect({
-                            priority: priority, setPriority: setPriority,
-                            setValue: setValue, register: register
-                        })}
-                    </Grid>
-                    <Grid item>
-                        {DeadlineDatePicker({
-                            deadline: deadline, setDeadline: setDeadline,
-                            setValue: setValue, register: register()
-                        })}
-                    </Grid>
-                    <Grid item>
-                        {ProgressSlider({
-                            progress: progress, setProgress: setProgress,
-                            setValue: setValue, register: register
-                        })}
-                    </Grid>
-                    <Grid item>
-                        {TagAdder({
-                            tags: tags, setTags: setTags,
-                            setValue: setValue, register: register
-                        })}
-                    </Grid>
-                    <Grid item>
-                        {SubmitButton()}
-                    </Grid>
-                </Grid>
-
-            </form>
-        </Paper>
+                </form>
+            </Paper>
         </Box>
     )
 }

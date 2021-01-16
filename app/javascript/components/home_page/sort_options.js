@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     label: {
         margin: '7px 7px 4px 55px',
         color: 'black',
-        fontSize: 14
+        fontSize: 14,
+        fontFamily: 'monospace'
     },
     fieldButton: {
         margin: 0,

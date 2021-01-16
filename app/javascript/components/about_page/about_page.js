@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
         color: 'orange',
         fontSize: `4rem`
     },
-    button: {
-
+    title: {
+        fontFamily: 'monospace'
     }
 
 }))
@@ -51,7 +51,7 @@ const AboutPage = (props) => {
                 <CardHeader
                     avatar={<InfoIcon className={classes.avatar}/>}
                     title={
-                        <Typography variant="h4" color="textPrimary">
+                        <Typography variant="h4" color="textPrimary" className={classes.title}>
                             About Task Manager
                         </Typography>}
                 />
@@ -74,7 +74,6 @@ const AboutPage = (props) => {
                     <Button
                         onClick={() => openInNewTab(
                             "https://breadpeanutbutter.github.io/task-manager/UserGuide.html")}
-                        className={classes.button}
                         size="large"
                         color="primary"
                         startIcon={<DescriptionIcon/>}
