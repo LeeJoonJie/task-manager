@@ -55,7 +55,7 @@ class HomePage extends React.Component {
 
                 <Grid container style={{margin: "30px 40px 20px 20px", padding: 0}} spacing={1} alignItems="flex-end" >
                     <Grid item>
-                        <Typography variant='h5'>{`Found ${this.state.tasks.length} task(s)`}</Typography>
+                        <Typography style={{fontFamily: 'monospace'}} variant='h5'>{`Found ${this.state.tasks.length} task(s)`}</Typography>
                     </Grid>
 
                     <Grid item>
