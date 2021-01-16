@@ -16,7 +16,9 @@ import {CardActions} from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
     actions: {
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+        padding: '8px 8px 0px 8px'
     }
 }))
 

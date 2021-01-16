@@ -5,6 +5,11 @@ import CardContent from "@material-ui/core/CardContent"
 import React from "react"
 
 const useStyles = makeStyles((theme) => ({
+
+    root: {
+        overflow: 'auto',
+        padding: '4px 16px 0px 16px'
+    },
     tags: {
         "&:disabled": {
             backgroundColor: 'lightGrey',
@@ -16,9 +21,8 @@ const useStyles = makeStyles((theme) => ({
 const CardTags = (props) => {
 
     const classes = useStyles()
-
     return (
-        <CardContent>
+        <CardContent className={classes.root}>
             <Grid container spacing={1}>
                 {props.task.tags.map(tag => (
                     <Grid item key={tag}>

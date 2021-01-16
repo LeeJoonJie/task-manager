@@ -9,8 +9,8 @@ import CardButtons from "./card_buttons"
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: 20,
-        minWidth: '50%'
+        margin: 80,
+        display: 'grid'
     }
 }))
 
@@ -21,7 +21,7 @@ const TaskCard = (props) => {
 
     return (
 
-        <Card className={classes.root} variant="outlined">
+        <Card className={props.className ?? classes.root} variant="outlined">
             <CardHead task={props.task} index={props.index}/>
             <CardTags task={props.task}/>
             <CardDescription task={props.task}/>

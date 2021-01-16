@@ -10,7 +10,9 @@ import CardHeader from '@material-ui/core/CardHeader'
 
 const useStyles = makeStyles((theme) => ({
     header: {
-        backgroundColor: 'whiteSmoke'
+        backgroundColor: 'whiteSmoke',
+        padding: '5px 16px 5px 16px',
+        margin: '0px 0px 16px 0px'
     },
     headerAction: {
         margin: 15
