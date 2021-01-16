@@ -13,7 +13,7 @@ import TagAdder from "./tag_adder"
 import Paper from '@material-ui/core/Paper'
 import {makeStyles} from "@material-ui/core/styles"
 import Grid from '@material-ui/core/Grid'
-import Box from "@material-ui/core/Box";
+import Box from "@material-ui/core/Box"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         padding: 50,
-        margin: 30,
+        margin: 80,
         width: '50%'
 
     },

@@ -74,7 +74,7 @@ class HomePage extends React.Component {
                         <DeleteAllButton getAllTasks={this.getAllTasks}/>
                     </Grid>
                 </Grid>
-                <Paper variant="outlined" style={{padding: "25px 10px", minHeight: "50vh"}}>
+                <Paper variant="outlined" style={{padding: "25px 10px 60px 10px", minHeight: "50vh"}}>
                     <TasksList state={this.state} getAllTasks={this.getAllTasks}/>
                 </Paper>
 
