@@ -1,6 +1,6 @@
 import React from "react"
 import {Grid} from "@material-ui/core"
-import TaskCard from "./task_card"
+import TaskCard from "../task_card/task_card"
 
 const layoutMap = new Map([
     ["List", 6],

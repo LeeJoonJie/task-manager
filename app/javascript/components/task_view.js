@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import {useHistory, useParams} from 'react-router-dom'
-import TaskCard from "./home_page/task_card"
-import {makeStyles} from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
+import TaskCard from "./task_card/task_card"
+import {makeStyles} from "@material-ui/core/styles"
+import Box from "@material-ui/core/Box"
 
 const useStyles = makeStyles((theme) => ({
     root: {
