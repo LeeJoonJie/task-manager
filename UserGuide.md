@@ -18,7 +18,7 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). You should see something like the picture below.
 2. The card-like boxes that you see are tasks. These are sample data loaded for you to play with.
-3. To add your own task, click the Add Task button on the Homepage. Fill in the relevant information in the form that shows and submit. The task title is the only compulsory field. 
+3. To add your own task, click the Add Task button on the Homepage. Fill in the task details in the form and submit.
 4. To edit a task, click the Edit icon on the task card and update the form.
 5. To delete a task, click the Delete icon on the task card and click 'Ok' when prompted with a confirmation message.
 6. To delete all tasks, click the Delete All Button on the Homepage and click 'Ok' when prompted with a confirmation message.
@@ -31,8 +31,7 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 Add Task
 
-Add a task. 
-You can add the following fields to a task.
+When creating a task, you can add the following information fields.
 
 Field       | Requirement      | Description
 ------------|------------------|-----------------------
