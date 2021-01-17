@@ -9,14 +9,15 @@
 
 ## **1. Introduction**
 Hello there! If you are reading this, you must be curious about *Task Manager*.
-*Task Manager**Task Manager* is a website and tool to help effectively keep track of tasks to be done. 
+*Task Manager* is a tool built help you manage and keep track of tasks. 
+With Task Manager you can set deadlines, monitor progress, add tags, search for tasks and more!
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **2. Quick Start**
 
-1. Go to https://dry-depths-11934.herokuapp.com/. You should see something like the picture below.
-2. The card-like boxes that you see are tasks. These tasks that are already present are sample data loaded for you to play with.
+1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). You should see something like the picture below.
+2. The card-like boxes that you see are tasks. These tasks that are displayed are sample data loaded for you to play with.
 3. To add your own task, press the Add button. Fill in the relevant information in the form that shows and submit. The task title is the only compulsory field. 
 4. To edit a task, click the Edit icon and update the form.
 5. To delete a task, click the Delete icon and click 'Ok' when prompted with a confirmation message.
@@ -35,11 +36,15 @@ Add a task.
 Field       | Requirement      | Description
 ------------|------------------|-----------------------
 Title       | Compulsory       | Title/name of a task. Cannot be empty.
-Description | Optional         | Additional description of a task.
+Description | Optional         | Description of a task.
 Priority    | Optional         | Priority of a task. Can take values *Low*, *Moderate* or *High*.
 Deadline    | Optional         | Deadline of a task. Takes the format DD/MM/YYYY.
 Progress    | Default value 0  | Progress of a task in percentage. Can take values 0-100.
-Tags        | Optional         | Additional tags eg. can be used to represent custom categories.  
+Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
+
+:memo: When adding tags, press the 'Enter' or ',' key to add the tag after typing it in the text box. 
+This also means tags cannot have ',' characters in them.
+:memo: To rearrange tags, use the mouse to drag and drop the tags to the desired position.
 
 ### 3.2 Edit Task
 
@@ -53,7 +58,7 @@ Delete a task.
 
 ### 3.4 Delete all Tasks
 
-Delete all tasks easily with one button.
+Delete all tasks easily.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
 :memo: You may use this to delete the sample data if you have no need for them anymore.
@@ -74,17 +79,18 @@ sorting order for them.
 
 **Examples:**
 
-:black_nib: To see tasks that have highest priority first: 
+:black_nib: To display tasks that have highest priority first: 
 
-:black_nib: To see tasks that have the nearest deadlines first:
+:black_nib: To display tasks that have the nearest deadlines first:
 
-:black_nib: To see tasks that have the most progress first:
+:black_nib: To display tasks that have the most progress first:
 
 ### 3.6 Search Tasks
 
 Search for tasks using various fields. 
-Type a string in the search box and press enter.
+Type a string in the search box and press the 'Enter' key.
 
+Fields: 
 1. All 
 2. Title
 3. Description
@@ -92,11 +98,10 @@ Type a string in the search box and press enter.
 5. Deadline
 6. Priority
 
-:memo: The search feature finds tasks which contain the specified search string, not just exact matches.
-
-:memo: It is also not case-sensitive.
-
+:memo: The search feature finds tasks which contain the specified search string, not just exact matches, and it is not case-sensitive.
 :memo: The search feature can be used together with the sort feature to achieve more specific results.
+:memo: When searching for Deadline dates, you can use '-', '/' or ' ' as separators 
+eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the same results.
 
 **Examples:**
 
@@ -119,7 +124,7 @@ Grid 4/Row   | 4 tasks per row. Not recommended for smaller screens.
 
 :memo: Suitability of layout configuration might differ depending on screen size. For example,
 a 27-inch monitor will be able to display the Grid 4/Row layout comfortably while a 13-inch monitor 
-might be too small to display 4 tasks per row nicely. 
+might not be wide enough to display 4 tasks per row nicely. 
 
 
 --------------------------------------------------------------------------------------------------------------------
