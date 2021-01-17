@@ -15,6 +15,7 @@ import {makeStyles} from "@material-ui/core/styles"
 import Grid from '@material-ui/core/Grid'
 import Box from "@material-ui/core/Box"
 import { useSnackbar } from 'notistack'
+import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -91,12 +92,12 @@ const TaskForm = (props) => {
         return (
             <Box textAlign='center' style={{margin: 20}}>
                 <Button
-                    variant="contained"
+                    variant="outlined"
                     color="primary"
                     size="large"
                     disabled={isSubmitting}
                     type="submit"
-                    startIcon={is_editing ? <SaveIcon/> : null}
+                    startIcon={is_editing ? <SaveIcon/> : <AddIcon/>}
                 >
                     {is_editing ? "Save" : "Add"}
                 </Button>
