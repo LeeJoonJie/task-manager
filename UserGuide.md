@@ -31,7 +31,7 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 Add Task
 
-When creating a task, you can add the following information fields.
+A task can have the following information fields.
 
 Field       | Requirement      | Description
 ------------|------------------|-----------------------
