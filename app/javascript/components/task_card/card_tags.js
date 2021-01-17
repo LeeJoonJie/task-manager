@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 
     root: {
         overflow: 'auto',
-        padding: '4px 16px 0px 16px'
+        padding: '2px 16px 0px 16px'
     },
     tags: {
         "&:disabled": {

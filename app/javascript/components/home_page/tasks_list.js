@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 20,
         height: 320,
         display: 'grid',
-        gridTemplateRows: '25% 25% 20% 15% 15%'
+        gridTemplateRows: '30% 23% 19% 14% 14%'
     },
 
 }))
