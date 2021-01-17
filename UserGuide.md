@@ -45,7 +45,9 @@ Tags        | Optional         | Tags eg. can be used to represent custom catego
 
 :memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
+
 :memo: Tags will appear as blue boxes below the input box if they have been successfully added.
+
 :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
 
 ### 3.2 Edit Task
@@ -63,6 +65,7 @@ Delete a task.
 Delete all tasks easily.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
+
 :memo: You may use this to delete the sample data if you have no need for them anymore.
 
 ### 3.5 Sort Tasks
@@ -102,8 +105,10 @@ Fields:
 6. Priority
 
 :memo: The search feature finds tasks which contain the specified search string, not just exact matches, and it is not case-sensitive.
+
 :memo: The search feature can be used together with the sort feature to achieve more specific results.
-:memo: When searching for Deadline , you can use '-', '/' or ' ' as date separators 
+
+:memo: When searching for Deadline , you can use '-', '/' or ' ' as date separators
 eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the same results.
 
 **Examples:**
