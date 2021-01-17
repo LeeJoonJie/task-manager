@@ -78,8 +78,6 @@ Sort tasks by various fields in either descending or ascending order.
 For example, when sorting by priority, tasks that have no priority will not show since there is no reasonable
 sorting order for them.
 
-<div markdown="span" class="alert alert-primary">
-
 **Examples:**
 
 :black_nib: To display tasks that have highest priority first:
@@ -93,7 +91,7 @@ sorting order for them.
 :black_nib: To display tasks that have the most progress first:
 
 ![](images/sort_eg3.png)
-</div>
+
 ### 3.6 Search Tasks
 
 Search for tasks using various fields. 
@@ -110,11 +108,17 @@ eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the s
 
 **Examples:**
 
-:black_nib: To find tasks with Priority of *High*
+:black_nib: To find tasks with Priority of *High*:
 
-:black_nib: To find tasks with Deadline in the month of February
+![](images/search_eg1.png)
 
-:black_nib: To find tasks with Tags containing 'School'
+:black_nib: To find tasks with Deadline in the month of February:
+
+![](images/search_eg2.png)
+
+:black_nib: To find tasks with Tags containing 'school':
+
+![](images/search_eg3.png)
 
 ### 3.7 Change Page Layout
 
