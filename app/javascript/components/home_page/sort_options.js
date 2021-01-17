@@ -28,9 +28,9 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         width: 120,
         padding: 0,
-        leftMargin: 0,
-        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)',
-        color: 'white'
+        color: 'orange',
+        backgroundColor: '#2e3136',
+        fontSize: 'larger'
     },
     orderButtonDesc: {
         margin: 0,

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         width: '100%',
-    },
+    }
 }))
 
 // Code adapted from material-ui.com/components/slider/#range-slider
@@ -49,7 +49,7 @@ const PrettoSlider = withStyles({
         height: 8,
         borderRadius: 4,
     },
-})(Slider);
+})(Slider)
 
 const ProgressSlider = ({ progress, setProgress, setValue, register }) => {
 

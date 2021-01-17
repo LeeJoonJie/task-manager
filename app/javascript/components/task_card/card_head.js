@@ -9,10 +9,12 @@ import React from "react"
 import CardHeader from '@material-ui/core/CardHeader'
 
 const useStyles = makeStyles((theme) => ({
-    header: {
+    root: {
         backgroundColor: 'whiteSmoke',
+        margin: '0px 0px 10px 0px'
+    },
+    header: {
         padding: '5px 16px 5px 16px',
-        margin: '0px 0px 16px 0px'
     },
     headerAction: {
         margin: 15
@@ -48,7 +50,7 @@ const CardHead = (props) => {
     const classes = useStyles()
 
     return (
-        <CardActionArea>
+        <CardActionArea className={classes.root}>
             <Link to={`/tasks/indiv/${props.task.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
                 <CardHeader
                     className={classes.header}

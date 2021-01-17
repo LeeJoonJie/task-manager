@@ -3,11 +3,19 @@ import axios from "axios"
 import {useHistory, useParams} from 'react-router-dom'
 import TaskCard from "./task_card/task_card"
 import {Grid} from "@material-ui/core"
+import {makeStyles} from "@material-ui/core/styles"
+
+const useStyles = makeStyles((theme) => ({
+    tags: {
+        padding: '4px 16px 0px 16px'
+    }
+}))
 
 const TaskView = (props) => {
     const [task, setTask] = useState(null)
     let {id} = useParams()
     let history = useHistory()
+    const classes = useStyles()
 
     useEffect(() => {
         props.setTabValue(-1)
@@ -27,7 +35,8 @@ const TaskView = (props) => {
         task &&
         <Grid container direction="row" justify="center">
             <Grid item xs={8}>
-                <TaskCard task={task} index={null} scrollable={false} actionAfterDelete={returnToHome}/>
+                <TaskCard task={task} tagsClassName={classes.tags} index={null} scrollable={false}
+                          actionAfterDelete={returnToHome}/>
             </Grid>
         </Grid>
     )

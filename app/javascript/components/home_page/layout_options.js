@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
         margin: '1px 10px 0px 10px',
         height: 35,
         width: 140,
-        color: 'white',
-        background: 'linear-gradient(45deg, #007cbf 40%, #079ef0 90%)'
+        color: 'orange',
+        backgroundColor: '#2e3136',
+        fontSize: 'larger'
     },
     label: {
         margin: '7px 7px 5px 15px',

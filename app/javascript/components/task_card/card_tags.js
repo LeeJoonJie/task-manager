@@ -22,7 +22,7 @@ const CardTags = (props) => {
 
     const classes = useStyles()
     return (
-        <CardContent className={classes.root}>
+        <CardContent className={props.tagsClassName ?? classes.root}>
             <Grid container spacing={1}>
                 {props.task.tags.map(tag => (
                     <Grid item key={tag}>
