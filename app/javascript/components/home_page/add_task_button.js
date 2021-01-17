@@ -2,7 +2,7 @@ import {Button} from "@material-ui/core"
 import {Add} from "@material-ui/icons"
 import React from "react"
 import {useHistory} from "react-router-dom"
-import Tooltip from "@material-ui/core/Tooltip";
+import Tooltip from "@material-ui/core/Tooltip"
 
 const AddTaskButton = (props) => {
     const history = useHistory()

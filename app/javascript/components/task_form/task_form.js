@@ -14,6 +14,8 @@ import Paper from '@material-ui/core/Paper'
 import {makeStyles} from "@material-ui/core/styles"
 import Grid from '@material-ui/core/Grid'
 import Box from "@material-ui/core/Box"
+import { useSnackbar } from 'notistack'
+import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,6 +38,7 @@ const TaskForm = (props) => {
     const [progress, setProgress] = useState(0)
     const [tags, setTags] = useState([])
     const classes = useStyles()
+    const { enqueueSnackbar } = useSnackbar()
 
     let is_editing = props.match.path === '/tasks/indiv/:id/edit' // Check if editing or adding new task
     let {id} = is_editing ? useParams() : NaN
@@ -74,12 +77,14 @@ const TaskForm = (props) => {
     const onSubmit = data => {
         const method = is_editing ? 'PUT' : 'POST'
         const url = is_editing ? `/tasks/${id}` : '/tasks'
+        const message = is_editing ? 'Edited task' : 'Added new task'
         axios({
             method: method,
             url: url,
             data: data,
         }).then(response => {
             history.push(`/tasks/indiv/${response.data.id}`)
+            enqueueSnackbar(message, {variant: 'success'} )
         })
     }
 
@@ -87,12 +92,12 @@ const TaskForm = (props) => {
         return (
             <Box textAlign='center' style={{margin: 20}}>
                 <Button
-                    variant="contained"
+                    variant="outlined"
                     color="primary"
                     size="large"
                     disabled={isSubmitting}
                     type="submit"
-                    startIcon={is_editing ? <SaveIcon/> : null}
+                    startIcon={is_editing ? <SaveIcon/> : <AddIcon/>}
                 >
                     {is_editing ? "Save" : "Add"}
                 </Button>
