@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         height: 35,
     },
     label: {
-        margin: '7px 7px 4px 55px',
+        margin: '7px 7px 4px 52px',
         color: 'black',
         fontSize: 14,
         fontFamily: 'monospace'

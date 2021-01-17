@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box"
 import ScrollTop from "./scroll_top"
 import Toolbar from "@material-ui/core/Toolbar"
 import AboutPage from "./about_page/about_page"
+import {SnackbarProvider} from 'notistack'
 
 const styles = {
     box: {
@@ -41,25 +42,27 @@ class App extends React.Component {
 
         return (
             <div>
-                <AppHeader tabValue={this.state.tabValue}
-                           setTabValue={this.setTabValue}/>
-                <Toolbar id="back-to-top-anchor" className={classes.toolbar}/>
-                <Box className={classes.box}>
-                    <Switch>
-                        <Route exact path="/" render={(props) =>
-                            <HomePage setTabValue={this.setTabValue}/>}/>
-                        <Route exact path="/new" render={(props) =>
-                            <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
-                        <Route exact path="/about" render={(props) =>
-                            <AboutPage {...props} setTabValue={this.setTabValue}/>}/>
-                        <Route exact path="/tasks/indiv/:id" render={(props) =>
-                            <TaskView setTabValue={this.setTabValue}/>}/>
-                        <Route exact path="/tasks/indiv/:id/edit" render={(props) =>
-                            <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
+                <SnackbarProvider autoHideDuration={3500}>
+                    <AppHeader tabValue={this.state.tabValue}
+                               setTabValue={this.setTabValue}/>
+                    <Toolbar id="back-to-top-anchor" className={classes.toolbar}/>
+                    <Box className={classes.box}>
+                        <Switch>
+                            <Route exact path="/" render={(props) =>
+                                <HomePage setTabValue={this.setTabValue}/>}/>
+                            <Route exact path="/new" render={(props) =>
+                                <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
+                            <Route exact path="/about" render={(props) =>
+                                <AboutPage {...props} setTabValue={this.setTabValue}/>}/>
+                            <Route exact path="/tasks/indiv/:id" render={(props) =>
+                                <TaskView setTabValue={this.setTabValue}/>}/>
+                            <Route exact path="/tasks/indiv/:id/edit" render={(props) =>
+                                <TaskForm {...props} setTabValue={this.setTabValue}/>}/>
 
-                    </Switch>
-                </Box>
-                <ScrollTop {...this.props}/>
+                        </Switch>
+                    </Box>
+                    <ScrollTop {...this.props}/>
+                </SnackbarProvider>
             </div>
 
         )

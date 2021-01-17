@@ -13,6 +13,7 @@ import React, {useState} from "react"
 import axios from "axios"
 import {useHistory} from "react-router-dom"
 import {CardActions} from "@material-ui/core"
+import { useSnackbar } from 'notistack'
 
 const useStyles = makeStyles((theme) => ({
     actions: {
@@ -27,6 +28,7 @@ const CardButtons = (props) => {
     const classes = useStyles()
     const [deleteOpen, setDeleteOpen] = useState(false)
     const history = useHistory()
+    const { enqueueSnackbar } = useSnackbar()
 
     // For deleting individual tasks
     const deleteTask = (id) => {
@@ -36,6 +38,7 @@ const CardButtons = (props) => {
         }).then((response) => {
             setDeleteOpen(false)
             props.actionAfterDelete() //id Update tasks state to update list
+            enqueueSnackbar('Deleted task', {variant: 'success'} )
         })
     }
 
