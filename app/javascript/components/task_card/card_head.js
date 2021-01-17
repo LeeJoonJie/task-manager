@@ -11,10 +11,11 @@ import CardHeader from '@material-ui/core/CardHeader'
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: 'whiteSmoke',
-        margin: '0px 0px 10px 0px'
+        margin: '0px 0px 10px 0px',
+        overflow: 'auto'
     },
     header: {
-        padding: '5px 16px 5px 16px',
+        padding: '2px 16px 5px 16px'
     },
     headerAction: {
         margin: 15
@@ -43,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     priorityNone: {
         borderColor: 'whiteSmoke'
     },
+    typography: {
+        fontWeight: 600
+    }
 }))
 
 const CardHead = (props) => {
@@ -75,14 +79,14 @@ const CardHead = (props) => {
                         />}
                     classes={{action: classes.headerAction}}
                     title={
-                        <Typography variant="h5" color="textPrimary">
+                        <Typography className={classes.typography} variant="h6" color="textPrimary">
                             {props.task.title}
                         </Typography>}
                     subheader={
                         <Typography variant="body1" color="textSecondary">
                             {props.task.deadline !== null ?
                                 `Deadline: ${moment(props.task.deadline.toString()).format('DD-MM-YYYY')}`
-                                : 'No deadline'}
+                                : ''} &nbsp; &nbsp;
                         </Typography>}
                 />
             </Link>

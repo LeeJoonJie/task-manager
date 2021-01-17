@@ -4,7 +4,7 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '80%'
+        width: '60%'
     },
 }))
 
@@ -23,7 +23,7 @@ const DescriptionTextField = ({ description, setDescription, register }) => {
                 value={description}
                 onChange={event => setDescription(event.target.value)}
                 multiline
-                rows="10"
+                rows="3"
                 size="medium"
             />
     )
