@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     tags: {
         "&:disabled": {
             backgroundColor: 'lightGrey',
-            color: 'black'
+            color: 'black',
+            textTransform: 'none'
         }
     }
 }))
