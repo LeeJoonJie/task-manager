@@ -88,8 +88,9 @@ sorting order for them.
 ### 3.6 Search Tasks
 
 Search for tasks using various fields. 
-Type a string in the search box and press enter.
+Type a string in the search box and press the 'Enter' key.
 
+Fields: 
 1. All 
 2. Title
 3. Description
@@ -98,8 +99,9 @@ Type a string in the search box and press enter.
 6. Priority
 
 :memo: The search feature finds tasks which contain the specified search string, not just exact matches, and it is not case-sensitive.
-
 :memo: The search feature can be used together with the sort feature to achieve more specific results.
+:memo: When searching for Deadline dates, you can use '-', '/' or ' ' as separators 
+eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the same results.
 
 **Examples:**
 
