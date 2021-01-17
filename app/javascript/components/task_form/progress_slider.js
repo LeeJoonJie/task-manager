@@ -49,7 +49,7 @@ const PrettoSlider = withStyles({
         height: 8,
         borderRadius: 4,
     },
-})(Slider);
+})(Slider)
 
 const ProgressSlider = ({ progress, setProgress, setValue, register }) => {
 
