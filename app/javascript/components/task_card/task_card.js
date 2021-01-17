@@ -10,7 +10,8 @@ import CardButtons from "./card_buttons"
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: 80,
-        display: 'grid'
+        display: 'grid',
+        minHeight: 320
     }
 }))
 
