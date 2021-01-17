@@ -72,37 +72,34 @@ Delete all tasks easily.
 
 Sort tasks by various fields in either descending or ascending order. 
 
-Fields: 
-1. Created At (default)
-2. Deadline
-3. Priority
-4. Progress
+![Sort fields](images/sort_fields.png)
 
 :memo: When sorting by Deadline or Priority (optional fields), only tasks that have these fields present will show. 
 For example, when sorting by priority, tasks that have no priority will not show since there is no reasonable
 sorting order for them.
 
+<div markdown="span" class="alert alert-primary">
 
 **Examples:**
 
-:black_nib: To display tasks that have highest priority first: 
+:black_nib: To display tasks that have highest priority first:
 
-:black_nib: To display tasks that have the nearest deadlines first:
+![](images/sort_eg1.png)
+
+:black_nib: To display tasks that have the closest deadlines first:
+
+![](images/sort_eg2.png)
 
 :black_nib: To display tasks that have the most progress first:
 
+![](images/sort_eg3.png)
+</div>
 ### 3.6 Search Tasks
 
 Search for tasks using various fields. 
 Type a string in the search box and press the 'Enter' key.
 
-Fields: 
-1. All 
-2. Title
-3. Description
-4. Tags
-5. Deadline
-6. Priority
+![Search fields](images/search_fields.png)
 
 :memo: The search feature finds tasks which contain the specified search string, not just exact matches, and it is not case-sensitive.
 
@@ -122,6 +119,8 @@ eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the s
 ### 3.7 Change Page Layout
 
 Choose from four different layouts to display your tasks on the Homepage.
+
+![Layout fields](images/layout_fields.png)
 
 Layout       | Description
 -------------|------------------------------------
