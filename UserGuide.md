@@ -17,11 +17,11 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 ## **2. Quick Start**
 
 1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). You should see something like the picture below.
-2. The card-like boxes that you see are tasks. These tasks that are displayed are sample data loaded for you to play with.
-3. To add your own task, press the Add button. Fill in the relevant information in the form that shows and submit. The task title is the only compulsory field. 
-4. To edit a task, click the Edit icon and update the form.
-5. To delete a task, click the Delete icon and click 'Ok' when prompted with a confirmation message.
-6. To delete all tasks, click the Delete All Button and click 'Ok' when prompted with a confirmation message.
+2. The card-like boxes that you see are tasks. These are sample data loaded for you to play with.
+3. To add your own task, click the Add Task button on the Homepage. Fill in the relevant information in the form that shows and submit. The task title is the only compulsory field. 
+4. To edit a task, click the Edit icon on the task card and update the form.
+5. To delete a task, click the Delete icon on the task card and click 'Ok' when prompted with a confirmation message.
+6. To delete all tasks, click the Delete All Button on the Homepage and click 'Ok' when prompted with a confirmation message.
 
 Read the next section to explore more features in more detail!
 
@@ -31,7 +31,8 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 Add Task
 
-Add a task.
+Add a task. 
+You can add the following fields to a task.
 
 Field       | Requirement      | Description
 ------------|------------------|-----------------------
@@ -42,9 +43,10 @@ Deadline    | Optional         | Deadline of a task. Takes the format DD/MM/YYYY
 Progress    | Default value 0  | Progress of a task in percentage. Can take values 0-100.
 Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
 
-:memo: When adding tags, press the 'Enter' or ',' key to add the tag after typing it in the text box. 
+:memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
-:memo: To rearrange tags, use the mouse to drag and drop the tags to the desired position.
+:memo: Tags will appear as blue boxes below the input box if they have been successfully added.
+:memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
 
 ### 3.2 Edit Task
 
@@ -67,6 +69,7 @@ Delete all tasks easily.
 
 Sort tasks by various fields in either descending or ascending order. 
 
+Fields: 
 1. Created At (default)
 2. Deadline
 3. Priority
@@ -100,7 +103,7 @@ Fields:
 
 :memo: The search feature finds tasks which contain the specified search string, not just exact matches, and it is not case-sensitive.
 :memo: The search feature can be used together with the sort feature to achieve more specific results.
-:memo: When searching for Deadline dates, you can use '-', '/' or ' ' as separators 
+:memo: When searching for Deadline , you can use '-', '/' or ' ' as date separators 
 eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the same results.
 
 **Examples:**
