@@ -94,7 +94,7 @@ sorting order for them.
 
 ### 3.6 Search Tasks
 
-Search for tasks using various fields. 
+Search for tasks using six different options. 
 Type a string in the search box and press the 'Enter' key.
 
 ![Search fields](images/search_fields.png)
