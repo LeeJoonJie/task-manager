@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         width: '100%',
-    },
+    }
 }))
 
 // Code adapted from material-ui.com/components/slider/#range-slider
