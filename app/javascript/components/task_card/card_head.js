@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 600
     },
     deadline: {
+        fontSize: '1.2rem'
+    },
+    deadlineOverdue: {
+        fontSize: '1.2rem',
         color: 'red'
     }
 }))
@@ -57,7 +61,8 @@ const CardHead = (props) => {
     const classes = useStyles()
     const deadline = moment(props.task.deadline.toString())
     const daysLeft = deadline.diff(moment.now(), 'days')
-    const deadlineDisplay  = `Deadline: ${daysLeft} days to ${deadline.format('DD-MM-YYYY')}`
+    const deadlineDisplay  = daysLeft >= 0 ? `${daysLeft} days to ${deadline.format('DD-MM-YYYY')}`
+        : `${Math.abs(daysLeft)} days past ${deadline.format('DD-MM-YYYY')}`
 
     console.log(moment(props.task.deadline.toString()).diff(moment.now(), 'days'))
     return (
@@ -90,7 +95,7 @@ const CardHead = (props) => {
                             {props.task.title}
                         </Typography>}
                     subheader={
-                        <Typography className={daysLeft <= 0 ? classes.deadline : null}
+                        <Typography className={daysLeft <= 0 ? classes.deadlineOverdue : classes.deadline}
                                     variant="body1" color="textSecondary">
                             {props.task.deadline !== null ? deadlineDisplay : ''} &nbsp; &nbsp;
                         </Typography>}
