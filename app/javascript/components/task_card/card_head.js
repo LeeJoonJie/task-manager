@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     },
     typography: {
         fontWeight: 600
+    },
+    deadline: {
+        color: 'red'
     }
 }))
 
@@ -87,7 +90,8 @@ const CardHead = (props) => {
                             {props.task.title}
                         </Typography>}
                     subheader={
-                        <Typography variant="body1" color="textSecondary">
+                        <Typography className={daysLeft <= 0 ? classes.deadline : null}
+                                    variant="body1" color="textSecondary">
                             {props.task.deadline !== null ? deadlineDisplay : ''} &nbsp; &nbsp;
                         </Typography>}
                 />
