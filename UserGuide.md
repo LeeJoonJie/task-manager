@@ -18,17 +18,22 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 ### 2.1 Quick Start
 
-1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
+1\. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
    You should land on a page like this.
    
 ![](images/quickstart1.png)
-2. The card-like boxes that you see are tasks (called task cards). These are sample data loaded for you to play with
+
+2\. The card-like boxes that you see are tasks (called task cards). These are sample data loaded for you to play with
    
 ![](images/quickstart2.png)
-3. To add your own task, click the 'Add Task' button on the Home page. Fill in the task details in the form and submit.
-4. To edit a task, click the 'Edit' icon on the task card and update the form.
-5. To delete a task, click the 'Delete' icon on the task card and click 'Ok' when prompted with a confirmation message.
-6. To delete all tasks, click the Delete All Button on the Home page and click 'Ok' when prompted with a confirmation message.
+
+3\. To add your own task, click the 'Add Task' button on the Home page. Fill in the task details in the form and submit.
+
+4\. To edit a task, click the 'Edit' icon on the task card and update the form.
+
+5\. To delete a task, click the 'Delete' icon on the task card and click 'Ok' when prompted with a confirmation message.
+
+6\. To delete all tasks, click the Delete All Button on the Home page and click 'Ok' when prompted with a confirmation message.
 
 ### 2.2 The Task Card
 
@@ -193,4 +198,9 @@ what you can do with *Task Manager*. It also contains a link to this user guide.
 ![Layout fields](images/about.png)
 
 
+<br/>
 --------------------------------------------------------------------------------------------------------------------
+
+
+<br/>
+<br/>
