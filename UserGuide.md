@@ -16,12 +16,15 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 ## **2. Quick Start**
 
-1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). You should see something like the picture below.
+1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
+   You should land on a page like the picture below.
+   ![](images/quickstart1.png)
 2. The card-like boxes that you see are tasks. These are sample data loaded for you to play with.
-3. To add your own task, click the Add Task button on the Homepage. Fill in the task details in the form and submit.
-4. To edit a task, click the Edit icon on the task card and update the form.
-5. To delete a task, click the Delete icon on the task card and click 'Ok' when prompted with a confirmation message.
-6. To delete all tasks, click the Delete All Button on the Homepage and click 'Ok' when prompted with a confirmation message.
+   ![](images/quickstart2.png)
+3. To add your own task, click the 'Add Task' button on the Home page. Fill in the task details in the form and submit.
+4. To edit a task, click the 'Edit' icon on the task card and update the form.
+5. To delete a task, click the 'Delete' icon on the task card and click 'Ok' when prompted with a confirmation message.
+6. To delete all tasks, click the Delete All Button on the Home page and click 'Ok' when prompted with a confirmation message.
 
 Read the next section to explore more features in more detail!
 
@@ -31,11 +34,20 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 View All Tasks
 
+Click the 'Home' tab on the website header to view your tasks on the Home page. 
+This is also the landing page of the website. 
+
+![](images/view_tasks.png)
+
 ### 3.2 View a Task
+
+Click the header of a task card to view its page.
+
+![](images/task_page.png)
 
 ### 3.3 Add Task
 
-Click the 'Add Task' tab (middle) on the website header or the 'Add Task' button on the Homepage.
+Click the 'Add Task' tab (middle) on the website header or the 'Add Task' button on the Home page.
 
 A task can have the following information fields:
 
@@ -56,8 +68,11 @@ This also means tags cannot have ',' characters in them.
 
 :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
 
-    :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
-    :memo: Tags will appear as blue boxes below the input box if they have been successfully added.
+**Examples:**
+
+:black_nib:
+
+![](images/add_task.png)
 
 ### 3.4 Edit Task
 
@@ -71,7 +86,7 @@ Click the 'Delete' icon at the bottom right of the task card.
 
 ### 3.6 Delete all Tasks
 
-Click the 'Delete all' button on the Homepage.
+Click the 'Delete all' button on the Home page.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
 
@@ -79,10 +94,12 @@ Click the 'Delete all' button on the Homepage.
 
 ### 3.7 Sort Tasks
 
-Click the 'Sort' button in the Homepage.
-Toggle between four different sorting categories in either descending or ascending order.
+Click the 'Sort' button in the Home page.
+Toggle between four sorting fields in either descending or ascending order.
 
 ![Sort fields](images/sort_fields.png)
+
+:memo: The default sorting is by 'Created At' in descending order. 
 
 :memo: When sorting by Deadline or Priority (optional fields), only tasks that have these fields present will show. 
 For example, when sorting by priority, tasks that have no priority will not show since there is no reasonable
@@ -104,8 +121,8 @@ sorting order for them.
 
 ### 3.8 Search Tasks
 
-Use the search box in the Homepage. Type a string in the search box and press the 'Enter' key.
-Toggle between six different search options.
+Use the search box in the Home page. Type a string in the search box and press the 'Enter' key.
+Toggle between six search fields.
 
 ![Search fields](images/search_fields.png)
 
@@ -132,8 +149,8 @@ eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the s
 
 ### 3.9 Change Page Layout
 
-Click the 'Layout' button in the Homepage.
-Toggle between four different layouts to display your tasks on the Homepage.
+Click the 'Layout' button in the Home page.
+Toggle between four layouts to display your tasks on the Home page.
 
 ![Layout fields](images/layout_fields.png)
 
@@ -145,6 +162,7 @@ List         | Default layout
 Grid 2/Row   | 2 tasks per row
 Grid 3/Row   | 3 tasks per row. Not recommended for smaller screens.
 Grid 4/Row   | 4 tasks per row. Not recommended for smaller screens.
+
 <br/>
 :memo: Suitability of layout configuration might differ depending on screen size. For example,
 a 27-inch monitor will be able to display the Grid 4/Row layout comfortably while a 13-inch monitor 
@@ -152,8 +170,10 @@ might not be wide enough to display 4 tasks per row nicely.
 
 ### 3.10 About Task Manager
 
-Click the 'About Task Manager' tab (right) on the header of the website for a quick refresher of 
+Click the 'About Task Manager' tab (right) on the website header for a quick refresher of 
 the actions you can do on *Task Manager*. It also contains a link to this user guide.
+
+![Layout fields](images/about.png)
 
 
 --------------------------------------------------------------------------------------------------------------------
