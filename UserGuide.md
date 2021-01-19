@@ -78,7 +78,7 @@ Progress    | Default value 0  | Progress of a task in percentage. Can take valu
 Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
 
 <br/>
-:memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
+:memo: When adding tags, press the 'Enter' or ',' key after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
 
 :memo: Tags will appear as blue boxes below the input box if they have been successfully added.

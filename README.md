@@ -17,7 +17,7 @@ Developed by: Lee Joon Jie (A0206311Y)
 See the User Guide for more detailed documentation and examples
 
 ### Quick Links:
-* [User Guide](https://breadpeanutbutter.github.io/task-manager/UserGuide.html)
+* [User Guide](https://breadpeanutbutter.github.io/task-manager/UserGuide.html) 
 * [Task Manager Website](https://dry-depths-11934.herokuapp.com/)
 
 ### Tech Stack:
@@ -27,3 +27,4 @@ See the User Guide for more detailed documentation and examples
 * Front End: [React](https://reactjs.org/), 
   [Material-UI](https://material-ui.com/)
 * Database: [PostgreSQL](https://www.postgresql.org/)
+
