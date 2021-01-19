@@ -107,7 +107,7 @@ const AppHeader = (props) => {
                                     className={props.tabValue === 1 ? classes.selectedTab : classes.tab}
                                     icon={<AddIcon fontSize="large"/>}/>
                             </Tooltip>
-                            <Tooltip title="About">
+                            <Tooltip title="About Task Manager">
                                 <Tab
                                     className={props.tabValue === 2 ? classes.selectedTab : classes.tab}
                                     icon={<InfoIcon fontSize="large"/>}/>
