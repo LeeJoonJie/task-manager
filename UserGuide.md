@@ -18,7 +18,7 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 ### 2.1 Quick Start
 
-1\. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
+1\. Go to [https://dry-depths-11934.herokuapp.com/](https://dry-depths-11934.herokuapp.com/). 
    You should land on a page like this.
    
 ![](images/quickstart1.png)

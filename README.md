@@ -26,5 +26,5 @@ See the User Guide for more detailed documentation and examples
 * Back End: [Ruby on Rails 6.0.3.4](https://rubyonrails.org/)
 * Front End: [React](https://reactjs.org/), 
   [Material-UI](https://material-ui.com/)
-* Database: [PostgreSQL](https://www.postgresql.org/)
+* Database: [PostgreSQL](https://www.postgresql.org/) 
 
