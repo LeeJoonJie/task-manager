@@ -31,7 +31,9 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 Add Task
 
-A task can have the following information fields.
+Click the 'Add Task' tab on the website header or the 'Add Task' button on the Homepage.
+
+A task can have the following information fields:
 
 Field       | Requirement      | Description
 ------------|------------------|-----------------------
@@ -42,6 +44,7 @@ Deadline    | Optional         | Deadline of a task. Takes the format DD/MM/YYYY
 Progress    | Default value 0  | Progress of a task in percentage. Can take values 0-100.
 Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
 
+<br/>
 :memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
 
@@ -51,17 +54,17 @@ This also means tags cannot have ',' characters in them.
 
 ### 3.2 Edit Task
 
-Edit a task by updating the form.
+Click the 'Edit' icon at the bottom right of the task card.
 
 ### 3.3 Delete Task
 
-Delete a task.
+Click the 'Delete' icon at the bottom right of the task card.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
 
 ### 3.4 Delete all Tasks
 
-Delete all tasks easily.
+Click the 'Delete all' button on the Homepage.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
 
@@ -69,7 +72,8 @@ Delete all tasks easily.
 
 ### 3.5 Sort Tasks
 
-Sort tasks by various fields in either descending or ascending order. 
+Click the 'Sort' button in the Homepage.
+Toggle between four different sorting categories in either descending or ascending order.
 
 ![Sort fields](images/sort_fields.png)
 
@@ -93,8 +97,8 @@ sorting order for them.
 
 ### 3.6 Search Tasks
 
-Search for tasks using six different options. 
-Type a string in the search box and press the 'Enter' key.
+Use the search box in the Homepage. Type a string in the search box and press the 'Enter' key.
+Toggle between six different search options.
 
 ![Search fields](images/search_fields.png)
 
@@ -121,9 +125,12 @@ eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the s
 
 ### 3.7 Change Page Layout
 
-Choose from four different layouts to display your tasks on the Homepage.
+Click the 'Layout' button in the Homepage.
+Toggle between four different layouts to display your tasks on the Homepage.
 
 ![Layout fields](images/layout_fields.png)
+
+<br/>
 
 Layout       | Description
 -------------|------------------------------------
@@ -131,7 +138,7 @@ List         | Default layout
 Grid 2/Row   | 2 tasks per row
 Grid 3/Row   | 3 tasks per row. Not recommended for smaller screens.
 Grid 4/Row   | 4 tasks per row. Not recommended for smaller screens.
-
+<br/>
 :memo: Suitability of layout configuration might differ depending on screen size. For example,
 a 27-inch monitor will be able to display the Grid 4/Row layout comfortably while a 13-inch monitor 
 might not be wide enough to display 4 tasks per row nicely. 
