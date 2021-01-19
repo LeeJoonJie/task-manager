@@ -11,6 +11,7 @@ Developed by: Lee Joon Jie (A0206311Y)
 * Sort tasks by various fields such as priority, deadline, progress etc.
 * Tag tasks with categories
 * Search for tasks
+* Sort tasks
 
 ... and more!
 
