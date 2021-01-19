@@ -29,9 +29,13 @@ Read the next section to explore more features in more detail!
 
 ## **3. Features**
 
-### 3.1 Add Task
+### 3.1 View All Tasks
 
-Click the 'Add Task' tab on the website header or the 'Add Task' button on the Homepage.
+### 3.2 View a Task
+
+### 3.3 Add Task
+
+Click the 'Add Task' tab (middle) on the website header or the 'Add Task' button on the Homepage.
 
 A task can have the following information fields:
 
@@ -45,24 +49,27 @@ Progress    | Default value 0  | Progress of a task in percentage. Can take valu
 Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
 
 <br/>
-:memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
+    :memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
 
 :memo: Tags will appear as blue boxes below the input box if they have been successfully added.
 
 :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
 
-### 3.2 Edit Task
+    :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
+    :memo: Tags will appear as blue boxes below the input box if they have been successfully added.
+
+### 3.4 Edit Task
 
 Click the 'Edit' icon at the bottom right of the task card.
 
-### 3.3 Delete Task
+### 3.5 Delete Task
 
 Click the 'Delete' icon at the bottom right of the task card.
 
 :exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
 
-### 3.4 Delete all Tasks
+### 3.6 Delete all Tasks
 
 Click the 'Delete all' button on the Homepage.
 
@@ -70,7 +77,7 @@ Click the 'Delete all' button on the Homepage.
 
 :memo: You may use this to delete the sample data if you have no need for them anymore.
 
-### 3.5 Sort Tasks
+### 3.7 Sort Tasks
 
 Click the 'Sort' button in the Homepage.
 Toggle between four different sorting categories in either descending or ascending order.
@@ -95,7 +102,7 @@ sorting order for them.
 
 ![](images/sort_eg3.png)
 
-### 3.6 Search Tasks
+### 3.8 Search Tasks
 
 Use the search box in the Homepage. Type a string in the search box and press the 'Enter' key.
 Toggle between six different search options.
@@ -123,7 +130,7 @@ eg. searching for'02-02-2021', '02/02/2021' and '02 02 2021' will all give the s
 
 ![](images/search_eg3.png)
 
-### 3.7 Change Page Layout
+### 3.9 Change Page Layout
 
 Click the 'Layout' button in the Homepage.
 Toggle between four different layouts to display your tasks on the Homepage.
@@ -142,6 +149,11 @@ Grid 4/Row   | 4 tasks per row. Not recommended for smaller screens.
 :memo: Suitability of layout configuration might differ depending on screen size. For example,
 a 27-inch monitor will be able to display the Grid 4/Row layout comfortably while a 13-inch monitor 
 might not be wide enough to display 4 tasks per row nicely. 
+
+### 3.10 About Task Manager
+
+Click the 'About Task Manager' tab (right) on the header of the website for a quick refresher of 
+the actions you can do on *Task Manager*. It also contains a link to this user guide.
 
 
 --------------------------------------------------------------------------------------------------------------------
