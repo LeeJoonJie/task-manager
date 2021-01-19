@@ -14,19 +14,29 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **2. Quick Start**
+## **2. Getting Started**
+
+### 2.1 Quick Start
 
 1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
-   You should land on a page like the picture below.
+   You should land on a page like this.
    ![](images/quickstart1.png)
-2. The card-like boxes that you see are tasks. These are sample data loaded for you to play with.
+2. The card-like boxes that you see are tasks (called task cards). These are sample data loaded for you to play with.
    ![](images/quickstart2.png)
 3. To add your own task, click the 'Add Task' button on the Home page. Fill in the task details in the form and submit.
 4. To edit a task, click the 'Edit' icon on the task card and update the form.
 5. To delete a task, click the 'Delete' icon on the task card and click 'Ok' when prompted with a confirmation message.
 6. To delete all tasks, click the Delete All Button on the Home page and click 'Ok' when prompted with a confirmation message.
 
-Read the next section to explore more features in more detail!
+### 2.2 The Task Card
+
+Task cards are used to display tasks and their information. 
+Refer to the annotated example below to learn about the anatomy of a task card.
+
+![](images/annotated_task.jpeg)
+
+
+Read the next section to explore more features in greater detail!
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -34,20 +44,20 @@ Read the next section to explore more features in more detail!
 
 ### 3.1 View All Tasks
 
-Click the 'Home' tab on the website header to view your tasks on the Home page. 
+Click the 'Home' tab on the site header to view your tasks on the Home page. 
 This is also the landing page of the website. 
 
 ![](images/view_tasks.png)
 
 ### 3.2 View a Task
 
-Click the header of a task card to view its page.
+Click the card header of a task card to view its individual page.
 
 ![](images/task_page.png)
 
 ### 3.3 Add Task
 
-Click the 'Add Task' tab (middle) on the website header or the 'Add Task' button on the Home page.
+Click the 'Add Task' tab (middle tab) on the site header or click the 'Add Task' button on the Home page.
 
 A task can have the following information fields:
 
@@ -61,7 +71,7 @@ Progress    | Default value 0  | Progress of a task in percentage. Can take valu
 Tags        | Optional         | Tags eg. can be used to represent custom categories. Can have multiple tags but no repeats. 
 
 <br/>
-    :memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
+:memo: When adding tags, press the 'Enter' or ',' key to add a tag after typing it in the input box. 
 This also means tags cannot have ',' characters in them.
 
 :memo: Tags will appear as blue boxes below the input box if they have been successfully added.
@@ -78,17 +88,23 @@ This also means tags cannot have ',' characters in them.
 
 Click the 'Edit' icon at the bottom right of the task card.
 
+![](images/edit_icon.jpeg)
+
 ### 3.5 Delete Task
 
 Click the 'Delete' icon at the bottom right of the task card.
 
-:exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
+![](images/delete_icon.jpeg)
+
+:exclamation: This action is not reversible. 
+Please make sure you want to permanently delete the task before pressing the button.
 
 ### 3.6 Delete all Tasks
 
 Click the 'Delete all' button on the Home page.
 
-:exclamation: This action is not reversible. Please make sure you want to do this before pressing the button.
+:exclamation: This action is not reversible.
+Please make sure you want to permanently delete all tasks before pressing the button.
 
 :memo: You may use this to delete the sample data if you have no need for them anymore.
 
@@ -170,8 +186,8 @@ might not be wide enough to display 4 tasks per row nicely.
 
 ### 3.10 About Task Manager
 
-Click the 'About Task Manager' tab (right) on the website header for a quick refresher of 
-the actions you can do on *Task Manager*. It also contains a link to this user guide.
+Click the 'About Task Manager' tab (right tab) on the site header for a quick refresher of 
+what you can do with *Task Manager*. It also contains a link to this user guide.
 
 ![Layout fields](images/about.png)
 
