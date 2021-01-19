@@ -20,9 +20,11 @@ With Task Manager you can set deadlines, monitor progress, add tags, search for 
 
 1. Go to [https://dry-depths-11934.herokuapp.com/](https://breadpeanutbutter.github.io/task-manager/UserGuide.html). 
    You should land on a page like this.
-   ![](images/quickstart1.png)
-2. The card-like boxes that you see are tasks (called task cards). These are sample data loaded for you to play with.
-   ![](images/quickstart2.png)
+   
+![](images/quickstart1.png)
+2. The card-like boxes that you see are tasks (called task cards). These are sample data loaded for you to play with
+   
+![](images/quickstart2.png)
 3. To add your own task, click the 'Add Task' button on the Home page. Fill in the task details in the form and submit.
 4. To edit a task, click the 'Edit' icon on the task card and update the form.
 5. To delete a task, click the 'Delete' icon on the task card and click 'Ok' when prompted with a confirmation message.
@@ -78,10 +80,9 @@ This also means tags cannot have ',' characters in them.
 
 :memo: To rearrange tags, use the mouse to drag and drop the blue tag boxes to the desired position.
 
-**Examples:**
+**Example:**
 
-:black_nib:
-
+:black_nib: 
 ![](images/add_task.png)
 
 ### 3.4 Edit Task
