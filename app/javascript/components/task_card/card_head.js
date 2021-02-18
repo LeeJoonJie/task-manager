@@ -59,12 +59,12 @@ const useStyles = makeStyles((theme) => ({
 const CardHead = (props) => {
 
     const classes = useStyles()
-    const deadline = moment(props.task.deadline.toString())
-    const daysLeft = deadline.diff(moment.now(), 'days')
-    const deadlineDisplay  = daysLeft >= 0 ? `${daysLeft} days to ${deadline.format('DD-MM-YYYY')}`
+    const deadline = props.task.deadline == null ? null : moment(props.task.deadline.toString())
+    const daysLeft = deadline == null ? null : deadline.diff(moment.now(), 'days')
+    const deadlineDisplay  = daysLeft == null ? null
+        : daysLeft >= 0 ? `${daysLeft} days to ${deadline.format('DD-MM-YYYY')}`
         : `${Math.abs(daysLeft)} days past ${deadline.format('DD-MM-YYYY')}`
 
-    console.log(moment(props.task.deadline.toString()).diff(moment.now(), 'days'))
     return (
         <CardActionArea className={classes.root}>
             <Link to={`/tasks/indiv/${props.task.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
