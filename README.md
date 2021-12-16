@@ -1,6 +1,6 @@
 # Task Manager
 
-ask Manager is a tool built help you manage and keep track of tasks. 
+Task Manager is a tool built help you manage and keep track of tasks. 
 With Task Manager you can set deadlines, monitor progress, add tags, search for tasks and more!
 
 Developed by: Lee Joon Jie (A0206311Y)
